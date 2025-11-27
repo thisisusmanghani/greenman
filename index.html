@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <title>GREEN MAN - Industrial Fastening Solutions</title>
+    
+    <!-- Critical CSS inline for faster first paint -->
+    <style>
+        body{margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;overflow-x:hidden}
+        .page-loader{position:fixed;top:0;left:0;width:100%;height:100vh;background:linear-gradient(135deg,#1B5E20,#2D9F3C);display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity .5s,visibility .5s}
+        body.loaded .page-loader{opacity:0;visibility:hidden}
+        .loader-spinner{width:60px;height:60px;border:4px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .loader-text{color:#fff;margin-top:20px;font-size:24px}
+        .loader-subtext{color:rgba(255,255,255,.8);font-size:14px;margin-top:8px}
+    </style>
+    
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <h2 class="loader-text">Loading...</h2>
+            <p class="loader-subtext">GREEN MAN</p>
+        </div>
+    </div>
+
+    <!-- Navigation Bar (Loaded from navbar.html) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <video id="heroVideo" muted playsinline preload="metadata">
+                <source src="Video/4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1>Precision Steel Mounting Solutions</h1>
+            <p>Engineering excellence in steel pipe clamps and industrial fastening systems. Our products deliver unmatched strength, corrosion resistance, and long-term reliability for demanding industrial applications.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Steel Pipe Clamps</a>
+                <a href="#" class="btn">Mounting Systems</a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Optimized video cycling with smart background preloading
+        const heroVideo = document.getElementById('heroVideo');
+        const videoSources = [
+            'Video/4.mp4',  // Start with smallest video (668KB)
+            'Video/3.mp4',
+            'Video/6.mp4',
+            'Video/1.mp4',
+            'Video/2.mp4',
+            'Video/5.mp4',
+            'Video/7.mp4'
+        ];
+        
+        let currentVideoIndex = 0;
+        let videosShuffled = false;
+        let preloadedVideo = null;
+        let hasStartedPreloading = false;
+        
+        // Shuffle videos randomly (deferred)
+        function shuffleVideos() {
+            if (!videosShuffled) {
+                for (let i = videoSources.length - 1; i > 1; i--) {  // Keep first video
+                    const j = Math.floor(Math.random() * (i - 1)) + 1;
+                    [videoSources[i], videoSources[j]] = [videoSources[j], videoSources[i]];
+                }
+                videosShuffled = true;
+            }
+        }
+        
+        // Preload next video in background
+        function preloadNextVideo() {
+            const nextIndex = (currentVideoIndex + 1) % videoSources.length;
+            preloadedVideo = document.createElement('video');
+            preloadedVideo.src = videoSources[nextIndex];
+            preloadedVideo.preload = 'auto';
+            console.log('Preloading next video:', videoSources[nextIndex]);
+        }
+        
+        // Hide loader faster and start video
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide the page loader immediately
+            document.body.classList.add('loaded');
+            
+            // Delay video playback slightly for faster perceived load
+            setTimeout(() => {
+                const playPromise = heroVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log('Video autoplay prevented:', error);
+                    });
+                }
+                
+                // Start preloading after first video plays for 3 seconds
+                setTimeout(() => {
+                    if (!hasStartedPreloading) {
+                        shuffleVideos();
+                        preloadNextVideo();
+                        hasStartedPreloading = true;
+                    }
+                }, 3000);
+            }, 200);
+        });
+        
+        // Smooth transition to next video when current ends
+        heroVideo.addEventListener('ended', function() {
+            currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+            heroVideo.src = videoSources[currentVideoIndex];
+            heroVideo.play().catch(err => console.log('Video play error:', err));
+            
+            // Preload the next video in background after 2 seconds
+            setTimeout(preloadNextVideo, 2000);
+        });
+    </script>
+
+    <!-- Content Blocks -->
+    <section class="content-blocks">
+        <div class="blocks-wrapper">
+            <div class="block-item col-6" style="height: 510px; grid-row: span 2;">
+                <a href="Product-Catalogues-PDF/Certification 01 .pdf" download="Installation-Support-System-Certification.pdf">
+                    <div class="block-image">
+                        <img src="assets/pipe-mounting-systems.png" alt="Installation Support System" width="800" height="600">
+                    </div>
+                    <div class="block-overlay"></div>
+                    <div class="block-content">
+                        <h3 class="block-title">Installation Support System</h3>
+                        <span class="block-line"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="block-item col-6" style="height: 245px;">
+                <a href="#">
+                    <div class="block-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Industrial fasteners">
+                    </div>
+                    <div class="block-overlay"></div>
+                    <div class="block-content">
+                        <h3 class="block-title">Industrial Fasteners & Hardware</h3>
+                        <span class="block-line"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="block-item col-6" style="height: 245px;">
+                <a href="#">
+                    <div class="block-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Industrial fasteners">
+                    </div>
+                    <div class="block-overlay"></div>
+                    <div class="block-content">
+                        <h3 class="block-title">Industrial Fasteners & Hardware</h3>
+                        <span class="block-line"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="block-item col-2" style="height: 245px;">
+                <a href="#">
+                    <div class="block-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Quality Assurance">
+                    </div>
+                    <div class="block-overlay"></div>
+                    <div class="block-content">
+                        <h3 class="block-title">Quality Assurance & Testing</h3>
+                        <span class="block-line"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="block-item col-2" style="height: 245px;">
+                <a href="#">
+                    <div class="block-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Technical documentation">
+                    </div>
+                    <div class="block-overlay"></div>
+                    <div class="block-content">
+                        <h3 class="block-title">Technical Documentation & Certificates</h3>
+                        <span class="block-line"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="block-item col-4" style="height: 245px;">
+                <a href="#">
+                    <div class="block-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Engineering solutions">
+                    </div>
+                    <div class="block-overlay"></div>
+                    <div class="block-content">
+                        <h3 class="block-title">Custom Engineering Solutions</h3>
+                        <span class="block-line"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="block-item col-4" style="height: 245px;">
+                <a href="#">
+                    <div class="block-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Installation guides">
+                    </div>
+                    <div class="block-overlay"></div>
+                    <div class="block-content">
+                        <h3 class="block-title">Installation Guides & Assembly Diagrams</h3>
+                        <span class="block-line"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Navbar Component -->
+    <script>
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('Page Load Time:', Math.round(perfData.loadEventEnd - perfData.fetchStart), 'ms');
+                    console.log('DOM Content Loaded:', Math.round(perfData.domContentLoadedEventEnd - perfData.fetchStart), 'ms');
+                }, 0);
+            });
+        }
+        
+        // Optimized: Load navbar and footer in parallel
+        Promise.all([
+            fetch('navbar.html').then(r => r.text()),
+            fetch('footer.html').then(r => r.text())
+        ]).then(([navbarData, footerData]) => {
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            
+            if (navbarPlaceholder) navbarPlaceholder.innerHTML = navbarData;
+            if (footerPlaceholder) footerPlaceholder.innerHTML = footerData;
+        }).catch(error => console.error('Error loading components:', error));
+    </script>
+</body>
+</html>
