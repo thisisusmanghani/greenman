@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>Strut Channel Profiles – Product List</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .header {
+      text-align: center;
+    }
+    .category-info {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  
+    <!-- Navigation Bar (Loaded from navbar.html) -->
+    <div id="navbar-placeholder"></div>
+
+  <div class="container">
+    <!-- Product Detail Section -->
+    <section class="product-detail-section" id="products" style="padding: 0;">
+        <div class="product-detail-wrapper" id="categoryDisplay" style="padding: 0; background: transparent; box-shadow: none;">
+            <!-- GM41 Strut Products will be loaded dynamically from JSON -->
+        </div>
+    </section>
+  </div>
+
+  <!-- Footer (Loaded from footer.html) -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/product-renderer.js"></script>
+  <script src="js/table-utils.js"></script>
+  <script>
+    // Load GM41 Strut Channel products dynamically
+    const productRenderer = new ProductRenderer('data/products.json');
+    
+    // Initialize products on page load
+    async function initProducts() {
+      try {
+        await productRenderer.loadData();
+        // Render GM41 category products from strut-channels category
+        productRenderer.renderCategoryPage('strut-channels', 'categoryDisplay');
+        
+        // Initialize table features after products are loaded
+        setTimeout(() => {
+          if (typeof setupResponsiveTables === 'function') {
+            setupResponsiveTables();
+          }
+          if (typeof setupDynamicCardNumbers === 'function') {
+            setupDynamicCardNumbers();
+          }
+          
+          // Remove category-info elements
+          const categoryInfoElements = document.querySelectorAll('.category-info');
+          categoryInfoElements.forEach(el => el.remove());
+          
+          // Add click handlers to table rows
+          attachStrutTableClickHandlers();
+        }, 500);
+        
+        console.log('✅ GM41 Strut Channel products loaded successfully');
+      } catch (error) {
+        console.error('Error loading products:', error);
+        document.getElementById('categoryDisplay').innerHTML = 
+          '<p style="text-align:center;padding:40px;color:#d32f2f">Error loading products. Please refresh the page.</p>';
+      }
+    }
+    
+    initProducts();
+    
+    // Function to attach click handlers to strut table rows
+    function attachStrutTableClickHandlers() {
+      const strutTable = document.querySelector('.technical-table');
+      
+      if (strutTable) {
+        const tableRows = strutTable.querySelectorAll('tbody tr');
+        
+        if (tableRows.length > 0) {
+          tableRows.forEach(row => {
+            row.addEventListener('click', async function() {
+              // Get the Item Code from the second column (index 1)
+              const itemCode = this.cells[1].textContent.trim();
+              
+              // Convert item code to product ID (e.g., GM412115 -> strut-profile-gm412115)
+              let productId = 'strut-profile-' + itemCode.toLowerCase();
+              
+              // Check if product exists, if not try to find a fallback
+              try {
+                const response = await fetch('data/strut-channel-catalog.json');
+                const catalog = await response.json();
+                const product = catalog.category.products.find(p => p.id === productId);
+                
+                if (!product) {
+                  // Product not found with exact match
+                  // For GMD products that don't exist, try without the D
+                  if (itemCode.startsWith('GMD')) {
+                    const fallbackCode = itemCode.replace('GMD', 'GM');
+                    const fallbackId = 'strut-profile-' + fallbackCode.toLowerCase();
+                    const fallbackProduct = catalog.category.products.find(p => p.id === fallbackId);
+                    
+                    if (fallbackProduct) {
+                      productId = fallbackId;
+                      console.log(`⚠️ Product ${itemCode} not found, using fallback: ${fallbackCode}`);
+                    } else {
+                      alert(`Product ${itemCode} detailed specifications are not available yet.`);
+                      return;
+                    }
+                  } else {
+                    alert(`Product ${itemCode} detailed specifications are not available yet.`);
+                    return;
+                  }
+                }
+              } catch (error) {
+                console.error('Error checking product:', error);
+              }
+              
+              // Navigate to the Strut template page with product ID
+              window.location.href = `strut-template.html?id=${productId}`;
+            });
+            
+            // Add visual feedback
+            row.style.cursor = 'pointer';
+            row.title = 'Click to view detailed specifications and load cases';
+          });
+          console.log(`✅ Attached click handlers to ${tableRows.length} Strut Channel table rows`);
+        } else {
+          // Table exists but no rows yet, retry in a moment
+          setTimeout(attachStrutTableClickHandlers, 500);
+        }
+      } else {
+        // Strut table doesn't exist yet, retry in a moment
+        setTimeout(attachStrutTableClickHandlers, 500);
+      }
+    }
+  </script>
+
+    <!-- Load Navbar Component -->
+    <script>
+        // Load navbar component after DOM is ready
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                const placeholder = document.getElementById('navbar-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        // Load footer component
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerPlaceholder = document.getElementById('footer-placeholder');
+                if (footerPlaceholder) {
+                    footerPlaceholder.innerHTML = data;
+                }
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>

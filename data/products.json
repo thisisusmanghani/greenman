@@ -1,0 +1,277 @@
+{
+  "categories": [
+    {
+      "id": "c-channels",
+      "name": "C Profile Channels",
+      "badge": "C Channels",
+      "catalogPdf": "Product-Catalogues-PDF/C CHANNEL CATALOUGE.pdf",
+      "products": [
+        {
+          "id": "gmc-c-profile",
+          "title": "C Profile",
+          "subtitle": "GMC",
+          "description": "C-Channels are structural steel profiles characterized by their C-shaped cross-section, engineered to deliver strength, rigidity, and stability in a variety of load-bearing applications. Manufactured from high-quality steel and available in different sizes, thicknesses, and surface finishes (galvanized, hot-rolled, or coated), C-Channels are designed to withstand demanding environments while ensuring long service life. Their open profile makes them lightweight yet robust, offering excellent resistance against bending and twisting under load. C-Channels are widely used as framing members, support beams, mounting rails, and reinforcements in both industrial and commercial construction. They are ideal for supporting roofing systems, machinery frameworks, conveyor structures, and as secondary supports in bridges and heavy equipment.",
+          "images": [
+            "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800",
+            "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
+          ],
+          "specifications": {
+            "Material": "S250GD / S235 JR",
+            "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated",
+            "Length (mtr)": "3.6"
+          },
+          "technicalData": {},
+          "technicalTable": [
+            {
+              "Sr#": "1",
+              "Item Code": "GMC271812",
+              "Size": "27x18x1.2",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "2",
+              "Item Code": "GMC283015",
+              "Size": "28x30x1.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "3",
+              "Item Code": "GMC283020",
+              "Size": "28x30x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "4",
+              "Item Code": "GMC384015",
+              "Size": "38x40x1.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "5",
+              "Item Code": "GMC384020",
+              "Size": "38x40x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "6",
+              "Item Code": "GMC402015",
+              "Size": "40x20x1.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "7",
+              "Item Code": "GMC402020",
+              "Size": "40x20x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "8",
+              "Item Code": "GMC753820",
+              "Size": "75x38x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "9",
+              "Item Code": "GMC753825",
+              "Size": "75x38x2.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "10",
+              "Item Code": "GMC1005020",
+              "Size": "100x50x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "11",
+              "Item Code": "GMC1005025",
+              "Size": "100x50x2.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strut-channels",
+      "name": "Strut Channel Profiles",
+      "badge": "Strut Channels - GM41",
+      "catalogPdf": "Product-Catalogues-PDF/Greenman Strut Channel GM41 Series.pdf",
+      "products": [
+        {
+          "id": "gm41-strut-profile",
+          "title": "Strut Profile",
+          "subtitle": "GM41",
+          "description": "Strut channels are structural components made from sheet steel, usually galvanized or coated to resist corrosion. Their modular design allows them to be easily connected using bolts, nuts, and fittings, forming robust support structures. They can also support heavy loads depending on their configuration and installation. They provide organized system to support electrical conduits, cable trays, wiring, plumbing and piping, HVAC ductwork, MS piping and other components, particularly in commercial and industrial buildings. They act as reliable mounting systems for solar panels, providing flexibility and durability for positioning panels on rooftops or ground based installations. The combination of strength, versatility, and ease of use makes strut channels an indispensable component in a wide range of construction, industrial, and utility applications.",
+          "images": [
+            "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800",
+            "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
+          ],
+          "specifications": {
+            "Material": "S250GD / S235 JR",
+            "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated",
+            "Length (mtr)": "3.6"
+          },
+          "technicalData": {},
+          "technicalTable": [
+            {
+              "Sr#": "1",
+              "Item Code": "GM412115",
+              "Size": "41x21x1.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "2",
+              "Item Code": "GM412120",
+              "Size": "41x21x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "3",
+              "Item Code": "GM416225",
+              "Size": "41x62x2.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "4",
+              "Item Code": "GM416220",
+              "Size": "41x62x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "5",
+              "Item Code": "GM414120",
+              "Size": "41x41x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "6",
+              "Item Code": "GM414125",
+              "Size": "41x41x2.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "7",
+              "Item Code": "GM416220",
+              "Size": "41x62x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "8",
+              "Item Code": "GM416225",
+              "Size": "41x62x2.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "9",
+              "Item Code": "GM417220",
+              "Size": "41x72x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "10",
+              "Item Code": "GM417225",
+              "Size": "41x72x2.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "11",
+              "Item Code": "GM418220",
+              "Size": "41x82x2.0",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "12",
+              "Item Code": "GM418225",
+              "Size": "41x82x2.5",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "13",
+              "Item Code": "GMD414125",
+              "Size": "41x41x2.5 ||",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            },
+            {
+              "Sr#": "14",
+              "Item Code": "GMD418225",
+              "Size": "41x62x2.5 ||",
+              "Length (mtr)": "3.6",
+              "Material": "S250GD",
+              "Material type": "S235 JR",
+              "Coating": "pre-galvanized (Z-275) | HDG | epoxy coated"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anchors",
+      "name": "Anchors",
+      "badge": "Anchors",
+      "catalogPdf": null,
+      "products": []
+    }
+  ]
+}

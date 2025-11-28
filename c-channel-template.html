@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>C Profile – PDF-like Template</title>
+  <style>
+    :root{
+      --green-primary:#52B455;
+      --green-dark:#3a8a3d;
+      --green-darker:#2d6b2f;
+      --green-light:#7fd682;
+      --green-lighter:#b8e6ba;
+      --green-pale:#e8f5e9;
+      --dark-teal:#3a8a3d;
+      --medium-teal:#52B455;
+      --light-green:#e8f5e9;
+      --green:#52B455;
+      --green-2:#7fd682;
+      --ink:#222;
+      --muted:#6b6b6b;
+      --paper:#ffffff;
+      --line:#e6e6e6;
+      --shadow:0 4px 18px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#f1f3f5;color:var(--ink);font:14px/1.4 Segoe UI,system-ui,-apple-system,Arial,sans-serif}
+    
+    /* Fade in animation */
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    main{animation:fadeInUp 0.6s ease-out}
+
+    /* Page canvas that matches an A4 proportion */
+    .canvas{max-width:1100px;margin:24px auto;padding:18px;background:var(--paper);box-shadow:var(--shadow);border-radius:8px;transition:box-shadow 0.3s ease}
+    .canvas:hover{box-shadow:0 8px 24px rgba(33,92,92,0.15)}
+    .canvas:hover{box-shadow:0 8px 24px rgba(33,92,92,0.15)}
+
+    /* Title row */
+    .title-row{display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--light-green);padding:6px 4px 12px;transition:border-color 0.3s ease}
+    .title-row:hover{border-bottom-color:var(--medium-teal)}
+    .title-row:hover{border-bottom-color:var(--medium-teal)}
+    .bullet{width:14px;height:14px;border-radius:50%;background:var(--dark-teal);transition:all 0.3s ease}
+    .title-row:hover .bullet{transform:scale(1.2);background:var(--medium-teal);box-shadow:0 0 12px rgba(45,122,110,0.4)}
+    .title-row:hover .bullet{transform:scale(1.2);background:var(--medium-teal);box-shadow:0 0 12px rgba(45,122,110,0.4)}
+    .title-row:hover .bullet{transform:scale(1.2);background:var(--medium-teal);box-shadow:0 0 12px rgba(45,122,110,0.4)}
+    .title{font-size:26px;font-weight:800;letter-spacing:.2px;transition:color 0.3s ease}
+    .title-row:hover .title{color:var(--dark-teal)}
+    .title-row:hover .title{color:var(--dark-teal)}
+    .title-row:hover .title{color:var(--dark-teal)}
+
+    /* Top visuals (3 blocks like PDF) */
+    .visuals{display:grid;grid-template-columns:2fr 1.5fr 1fr;gap:14px;margin:14px 0 8px}
+    .ph{background:rgba(232,245,233,0.4);border:2px dashed var(--medium-teal);border-radius:6px;min-height:140px;display:flex;align-items:center;justify-content:center;color:var(--dark-teal);font-weight:600;transition:all 0.3s ease;cursor:pointer}
+    .ph:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(33,92,92,0.2);border-color:var(--dark-teal);background:rgba(224,243,223,0.6);border-style:solid}
+    .ph:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(33,92,92,0.2);border-color:var(--dark-teal);border-style:solid}
+    .ph img{max-width:100%;max-height:100%;object-fit:contain;transition:transform 0.3s ease}
+    .ph:hover img{transform:scale(1.05)}
+    .ph:hover img{transform:scale(1.05)}
+
+    /* Specification + Technical data */
+    .meta{display:grid;grid-template-columns:1fr 1fr 0.8fr;gap:18px;margin:8px 0 18px}
+    .card{border:none;padding:12px;border-radius:6px;transition:all 0.3s ease;background:rgba(204,232,201,0.15)}
+    .card:hover{background:rgba(204,232,201,0.25);transform:translateY(-2px);box-shadow:0 4px 12px rgba(33,92,92,0.1)}
+    .card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(33,92,92,0.1)}
+    .card h3{margin:.2rem 0 .4rem;font-weight:800;color:var(--dark-teal);font-size:14px;letter-spacing:0;transition:color 0.3s ease}
+    .card:hover h3{color:var(--medium-teal)}
+    .card:hover h3{color:var(--medium-teal)}
+    .card p{margin:.2rem 0;color:var(--ink);font-size:13px;line-height:1.4}
+    .list{display:grid;grid-template-columns:1fr;gap:4px;margin-top:4px}
+    .kv{display:grid;grid-template-columns:auto 1fr;gap:8px;font-size:12px;padding:4px;border-radius:4px;transition:all 0.2s ease}
+    .kv:hover{background:rgba(45,122,110,0.08);padding-left:8px}
+    .kv:hover{background:rgba(0,0,0,0.03);padding-left:8px}
+    .kv .k{color:var(--dark-teal);font-weight:600}
+    .kv .v{font-weight:400;text-align:left;color:var(--ink)}
+
+    /* Type strip + data table */
+    .type-strip{display:grid;grid-template-columns:auto 1fr;align-items:center;background:var(--dark-teal);color:#fff;border:1px solid var(--medium-teal);border-radius:4px;padding:8px 14px;margin-top:6px;transition:all 0.3s ease}
+    .type-strip:hover{background:var(--medium-teal);box-shadow:0 4px 12px rgba(33,92,92,0.3);transform:translateX(4px)}
+    .type-strip:hover{background:var(--medium-teal);box-shadow:0 4px 12px rgba(33,92,92,0.3);transform:translateX(4px)}
+    .type-strip b{color:#fff;font-size:13px;letter-spacing:.3px}
+    .props{width:100%;border-collapse:collapse;border:1px solid var(--medium-teal);border-top:none;overflow:hidden;border-radius:0 0 4px 4px}
+    .props th,.props td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 8px;text-align:center;font-size:11px;transition:all 0.2s ease}
+    .props tbody tr:hover td{background:rgba(204,232,201,0.15);color:var(--ink);font-weight:700}
+    .props th{background:rgba(82,180,85,0.2);color:var(--dark-teal);font-weight:800;line-height:1.3}
+    .props td{font-weight:600;background:#fff}
+    .props tbody tr:hover td{background:rgba(204,232,201,0.15);color:var(--ink);font-weight:700}
+    .props tbody tr:hover td{background:rgba(0,0,0,0.02);color:var(--ink);font-weight:700}
+    .props th:first-child,.props td:first-child{text-align:left;font-weight:700}
+    .props th:last-child,.props td:last-child{border-right:none}
+
+    /* Load cases */
+    .load-header{margin:18px 0 0;padding-top:10px;transition:all 0.3s ease}
+    .load-header:hover .load-title{color:var(--medium-teal)}
+    .load-title{font-weight:800;letter-spacing:.3px;font-size:15px;margin-bottom:4px;text-align:center;color:var(--dark-teal);transition:color 0.3s ease}
+    .load-header:hover .load-title{color:var(--medium-teal)}
+    .load-subtitle{font-size:13px;font-weight:600;text-align:center;margin-bottom:12px;color:var(--muted)}
+    
+  .cases{display:grid;grid-template-columns:90px repeat(5,1fr);grid-template-rows:44px 56px 92px;gap:0;border:2px solid var(--dark-teal);border-bottom:none;overflow:hidden;background:#fff;border-radius:6px 6px 0 0}
+  .cases .cell{border-right:1px solid var(--medium-teal);border-bottom:1px solid var(--medium-teal);background:#fff;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease}
+    .cases .cell:hover{background:var(--light-green);transform:scale(1.02);z-index:1}
+    .cases .cell:hover{background:rgba(0,0,0,0.02);transform:scale(1.02);z-index:1}
+    .cases .cell:last-child{border-right:none}
+    
+  /* Left column specialized cells */
+  /* F/L indicator cell - match PDF: square with diagonal from top-right to bottom-left */
+  .span-fl{position:relative;background:#fff;width:100%;height:100%;overflow:hidden;transition:all 0.2s ease}
+    .cell:hover .span-fl{background:rgba(204,232,201,0.3)}
+  .cell:hover .span-fl{background:rgba(204,232,201,0.3)}
+    .cell:hover .span-fl{background:rgba(204,232,201,0.3)}
+  .span-fl svg{position:absolute;inset:0;display:block}
+  .span-fl .f{position:absolute;top:6px;left:8px;font-weight:900;font-size:12px;line-height:1;color:var(--dark-teal);transition:all 0.2s ease}
+  .span-fl .l{position:absolute;bottom:6px;right:8px;font-weight:900;font-size:12px;line-height:1;color:var(--dark-teal);transition:all 0.2s ease}
+    .cell:hover .span-fl .f,.cell:hover .span-fl .l{color:var(--medium-teal);font-size:14px}
+  .cell:hover .span-fl .f,.cell:hover .span-fl .l{color:var(--medium-teal);font-size:14px}
+    .cell:hover .span-fl .f,.cell:hover .span-fl .l{color:var(--medium-teal);font-size:14px}
+  .span-label{background:#fff;padding:12px 6px;text-align:center;font-weight:900;font-size:11px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--dark-teal);transition:all 0.2s ease}
+    .cell:hover .span-label{color:var(--medium-teal);font-size:12px}
+  .cell:hover .span-label{color:var(--medium-teal);font-size:12px}
+    .cell:hover .span-label{color:var(--medium-teal);font-size:12px}
+
+  /* Case cells per row */
+  .cap{background:#fff;padding:8px 6px;text-align:center;font-weight:900;color:var(--dark-teal);font-size:13px;text-transform:uppercase;line-height:1.2;width:100%;height:100%;transition:color 0.2s ease}
+    .cell:hover .cap{color:var(--medium-teal)}
+  .cell:hover .cap{color:var(--medium-teal)}
+    .cell:hover .cap{color:var(--medium-teal)}
+  .sub{background:#fff;padding:6px 6px;text-align:center;color:var(--ink);font-size:11px;line-height:1.3;display:flex;align-items:center;justify-content:center;font-weight:600;width:100%;height:100%}
+  .diagram{background:#fff;position:relative;padding:6px;display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+  .diagram .ph-diagram{width:100%;height:100%;border:1px dashed var(--medium-teal);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--dark-teal);transition:all 0.2s ease}
+    .cell:hover .ph-diagram{border-color:var(--dark-teal);border-style:solid;background:rgba(204,232,201,0.2)}
+  .cell:hover .ph-diagram{border-color:var(--dark-teal);border-style:solid;background:rgba(204,232,201,0.2)}
+
+    /* Table body - using grid to match cases columns exactly */
+    .loads-wrapper{border:2px solid var(--dark-teal);border-top:none;background:#fff;border-radius:0 0 6px 6px;overflow:hidden}
+    .load-row{display:grid;grid-template-columns:90px repeat(5,1fr);gap:0;transition:all 0.2s ease}
+    .load-row:hover{background:var(--light-green);transform:scale(1.005)}
+    .load-row:hover{background:rgba(0,0,0,0.02);transform:scale(1.005)}
+    .load-row .cell{border-right:1px solid var(--medium-teal);border-bottom:1px solid rgba(45,122,110,0.2);padding:6px 8px;text-align:center;font-weight:600;font-size:11px;background:transparent;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease}
+    .load-row .cell:hover{color:var(--dark-teal);font-weight:700;background:rgba(204,232,201,0.5)}
+    .load-row .cell:hover{color:var(--dark-teal);font-weight:700;background:rgba(204,232,201,0.5)}
+    .load-row .cell:first-child{font-weight:700;color:var(--dark-teal)}
+    .load-row .cell:last-child{border-right:none}
+    .load-row:nth-child(even) .cell{background:rgba(204,232,201,0.1)}
+    .load-row:nth-child(odd) .cell{background:#fff}
+    .load-row:last-child .cell{border-bottom:none}
+
+    /* Footer */
+    .page-footer:hover{border-top-color:var(--medium-teal)}
+    .page-footer:hover{border-top-color:var(--medium-teal)}
+    .page-footer span:hover{background:var(--light-green);color:var(--dark-teal);font-weight:700}
+    .page-footer span{transition:all 0.3s ease;padding:4px 8px;border-radius:4px}
+    .page-footer:hover{border-top-color:var(--medium-teal)}
+    .page-footer span:hover{background:var(--light-green);color:var(--dark-teal);font-weight:700}
+    .page-footer span:hover{background:rgba(0,0,0,0.05);color:var(--dark-teal);font-weight:700}
+    .page-footer:hover{border-top-color:var(--medium-teal)}
+    .page-footer span:hover{background:var(--light-green);color:var(--dark-teal);font-weight:700}
+
+    /* Print */
+    @media print{
+      header{display:none}
+      body{background:#fff}
+      .canvas{box-shadow:none;margin:0;max-width:none}
+    .canvas:hover{box-shadow:0 8px 24px rgba(33,92,92,0.15)}
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 1024px) {
+      .canvas {
+        margin: 12px;
+        padding: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body { background: var(--paper); }
+      
+      .canvas { 
+        margin: 0; 
+        padding: 12px; 
+        border-radius: 0;
+        box-shadow: none;
+        width:100vw;            /* force full viewport width */
+        max-width:none;         /* remove desktop max-width */
+        min-width:100%;         /* ensure no intrinsic shrink */
+        overflow-x:hidden;      /* prevent accidental horizontal scroll */
+      }
+      
+      .title-row { 
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 8px 0 12px;
+      }
+      
+      .title { 
+        font-size: 20px;
+        line-height: 1.2;
+      }
+      
+      /* Visuals - keep in one row on mobile */
+      .visuals { 
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+        margin: 12px 0;
+        overflow-x: auto;
+      }
+      
+      .ph { 
+        min-height: 100px;
+        min-width: 100px;
+      }
+      
+      /* Meta cards - stack vertically */
+      .meta { 
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 10px 0 14px;
+      }
+      
+      .meta .card:nth-child(3) {
+        display: none !important;
+      }
+      
+      .card { 
+        padding: 10px;
+      }
+      
+      .card h3 { 
+        font-size: 13px;
+      }
+      
+      /* Type strip */
+      .type-strip { 
+        padding: 6px 10px;
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      
+      /* Tables - horizontal scroll */
+      .table-wrap, .props-wrapper { 
+        overflow-x: auto;
+        margin: 12px 0;
+        width: 100%;
+      }
+      
+      .props { 
+        font-size: 9px;                 /* slightly smaller base font on mobile */
+        width: 100%;
+        min-width: auto;
+        table-layout: fixed;          /* prevent layout jitter and trimming */
+      }
+      
+      .props th, .props td { 
+        padding: 4px 5px;              /* tighter padding */
+        font-size: 9px;                /* reduced font size */
+        white-space: normal;          /* allow wrapping so content doesn't force horizontal cut */
+        word-break: break-word;       /* break long identifiers */
+        line-height: 1.15;            /* compact line height */
+      }
+      
+      /* Load cases - make scrollable */
+      .load-header {
+        margin: 14px 0 0;
+      }
+      
+      .load-title {
+        font-size: 14px;
+      }
+      
+      .cases-wrapper {
+        overflow-x: auto;
+        margin: 0;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .cases { 
+        width: 100%;
+        min-width: auto;
+        grid-template-columns: 60px repeat(5, 1fr);
+        grid-template-rows: 40px 50px 80px;
+        gap: 0;
+      }
+      
+      .span-fl .f, .span-fl .l {
+        font-size: 9px;
+      }
+      
+      .span-label {
+        font-size: 8px;
+        padding: 6px 2px;
+        line-height: 1.2;
+      }
+      
+      .cap {
+        font-size: 10px;
+        padding: 4px 2px;
+        line-height: 1.1;
+      }
+      
+      .sub {
+        font-size: 8px;
+        padding: 4px 2px;
+        line-height: 1.2;
+      }
+      
+      .loads-wrapper {
+        overflow-x: auto;
+        margin: 0;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .load-row {
+        grid-template-columns: 60px repeat(5, 1fr);
+        width: 100%;
+        min-width: auto;
+      }
+      
+      .load-row .cell {
+        padding: 5px 2px;
+        font-size: 9px;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .canvas { 
+        padding: 10px 8px;      /* slightly reduce side padding to free space */
+        width:100vw;            /* keep full width on very small devices */
+        max-width:none;
+        min-width:100%;
+      }
+      
+      .title { 
+        font-size: 18px;
+      }
+      
+      .visuals {
+        gap: 8px;
+      }
+      
+      .ph { 
+        min-height: 100px;
+      }
+      
+      .card h3 {
+        font-size: 12px;
+      }
+      
+      .card p, .kv {
+        font-size: 11px;
+      }
+      
+      .type-strip {
+        padding: 5px 8px;
+      }
+      
+      .type-strip b {
+        font-size: 10px;              /* slightly smaller title */
+      }
+      
+      .props {
+        font-size: 8px;                /* further reduce on very small screens */
+        width: 100%;
+        table-layout: fixed;          /* keep columns consistent */
+      }
+      
+      .props th, .props td {
+        padding: 3px 4px;              /* tighter padding */
+        font-size: 8px;                /* small font for mini view */
+        white-space: normal;          /* undo nowrap from default */
+        word-break: break-word;
+        line-height: 1.1;
+      }
+      
+      .load-title {
+        font-size: 13px;
+      }
+      
+      .load-subtitle {
+        font-size: 11px;
+      }
+      
+      .cases {
+        grid-template-rows: 36px 44px 70px;
+        grid-template-columns: 55px repeat(5, 1fr);
+      }
+      
+      .load-row {
+        grid-template-columns: 55px repeat(5, 1fr);
+      }
+      
+      .load-row .cell {
+        font-size: 8px;
+        padding: 4px 2px;
+      }
+      
+      .span-label {
+        font-size: 7px;
+      }
+      
+      .cap {
+        font-size: 9px;
+      }
+      
+      .sub {
+        font-size: 7px;
+      }
+    }
+
+  </style>
+
+    </head>
+<body>
+  
+    <!-- Navigation Bar (Loaded from navbar.html) -->
+    <div id="navbar-placeholder"></div>
+<header>
+  </header>
+
+  <main class="canvas" role="main">
+    <!-- Title row -->
+
+
+    <!-- Top visuals -->
+    <section class="visuals" aria-label="Product visuals">
+      <div class="ph"><!-- Replace with product render -->
+        <img src="" alt="" />
+        <span style="position:absolute">Product Image</span>
+      </div>
+      <div class="ph">Dimensional Drawing</div>
+      <div class="ph">Section View</div>
+    </section>
+
+    <!-- Meta cards (Specification / Mounting method / Technical data) -->
+    <section class="meta">
+      <div class="card">
+        <h3>Specification</h3>
+        <p>C-profile rail, perforated, toothed</p>
+        <h3 style="margin-top:12px">Mounting method</h3>
+        <p>Form-locking connections and shear hole haunch connections</p>
+      </div>
+      <div class="card">
+        <h3>Technical data</h3>
+        <div class="list">
+          <div class="kv"><div class="k">Material:</div><div class="v">S250GD</div></div>
+          <div class="kv"><div class="k">Material type:</div><div class="v">pre-galvanized (Z-275)</div></div>
+          <div class="kv"><div class="k">Material:</div><div class="v">S235JR</div></div>
+          <div class="kv"><div class="k">Material type:</div><div class="v">hot-dip galvanized<br>epoxy coated</div></div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:center;justify-content:center;padding:8px">
+        <img src="assets/GMC-Channels/centroid xy axis.png" alt="Centroid XY Axis" style="width:100%;height:100%;object-fit:contain">
+      </div>
+    </section>
+
+    <!-- Type strip + properties table -->
+    <section aria-label="Type properties">
+      <div class="type-strip">
+        <div><b>Type GMC27 18 1.2</b></div>
+        <div style="text-align:right;color:#ddd;font-weight:400;font-size:11px"></div>
+      </div>
+      <table class="props">
+        <thead>
+          <tr>
+            <th>Identification</th>
+            <th>Size<br><small>[mm/mm]</small></th>
+            <th>Area<br><small>[mm2]</small></th>
+            <th>Weight<br><small>[kg/mtr]</small></th>
+            <th>Centroid dist CD<br><small>[mm]</small></th>
+            <th>Moment of Inertia<br><small>mm4 Z-AXIS</small></th>
+            <th>Moment of Inertia<br><small>mm4 Y-AXIS</small></th>
+            <th>Resistant Module<br><small>mm3 Z-AXIS</small></th>
+            <th>Resistant Module<br><small>mm3 Y-AXIS</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GMC271812</td>
+            <td>27×18×1.2</td>
+            <td>72.72</td>
+            <td>0.571</td>
+            <td>13.5</td>
+            <td>3170</td>
+            <td>—</td>
+            <td>—</td>
+            <td>283</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Load Cases -->
+    <section class="load-header">
+      <div class="load-title">Load Cases</div>
+      <div class="load-subtitle">Max Recommended Load - N</div>
+    </section>
+
+    <!-- Cases captions + diagrams -->
+    <section class="cases" aria-label="Load case overview">
+      <!-- Row 1: CASE titles (left cell intentionally empty) -->
+      <div class="cell" aria-hidden="true"></div>
+      <div class="cell"><div class="cap">CASE 1</div></div>
+      <div class="cell"><div class="cap">CASE 2</div></div>
+      <div class="cell"><div class="cap">CASE 3</div></div>
+      <div class="cell"><div class="cap">CASE 4</div></div>
+      <div class="cell" style="border-right:none"><div class="cap">CASE 5</div></div>
+
+      <!-- Row 2: Subtitles; left is F/L indicator -->
+      <div class="cell">
+        <div class="span-fl" aria-label="Force/Length indicator">
+          <span class="f">F</span>
+          <span class="l">L</span>
+        </div>
+      </div>
+      <div class="cell"><div class="sub">Single point<br>load at center</div></div>
+      <div class="cell"><div class="sub">2 point loads,<br>equidistant</div></div>
+      <div class="cell"><div class="sub">3 point loads,<br>equidistant</div></div>
+      <div class="cell"><div class="sub">4 point loads,<br>equidistant</div></div>
+      <div class="cell" style="border-right:none"><div class="sub">Uniformly<br>distributed load</div></div>
+
+      <!-- Row 3: Diagrams; left is SPAN mm label -->
+      <div class="cell"><div class="span-label">SPAN<br>mm</div></div>
+      <div class="cell"><div class="diagram"><div class="ph-diagram">Diagram</div></div></div>
+      <div class="cell"><div class="diagram"><div class="ph-diagram">Diagram</div></div></div>
+      <div class="cell"><div class="diagram"><div class="ph-diagram">Diagram</div></div></div>
+      <div class="cell"><div class="diagram"><div class="ph-diagram">Diagram</div></div></div>
+      <div class="cell" style="border-right:none"><div class="diagram"><div class="ph-diagram">Diagram</div></div></div>
+    </section>
+
+    <div class="loads-wrapper" aria-label="Loads table">
+      <script>
+        const spans = Array.from({length:30}, (_,i)=> (i+1)*100); // 100..3000
+        document.currentScript.insertAdjacentHTML('afterend', spans.map(mm => `
+          <div class="load-row">
+            <div class="cell">${mm}</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+          </div>`).join(''))
+      </script>
+    </div>
+  </main>
+
+  <script>
+    // Get product ID from URL parameter (?id=c-profile-gmc271812)
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id') || 'c-profile-gmc271812'; // Default to first product
+
+    // Load and render product data
+    async function loadProduct() {
+      try {
+        const response = await fetch('data/c-channel-catalog.json');
+        const catalog = await response.json();
+        const products = catalog.category.products;
+        
+        // Find the product by ID
+        const product = products.find(p => p.id === productId);
+        
+        if (!product) {
+          console.error('Product not found:', productId);
+          return;
+        }
+        
+        // Update title
+        document.querySelector('.title').textContent = product.title;
+        document.title = `${product.title} – GREEN MAN`;
+        
+        // Update images if product has identification code
+        if (product.properties && product.properties.identification) {
+          const identification = product.properties.identification;
+          const visuals = document.querySelectorAll('.visuals .ph');
+          
+          // Map identification to DWG filename (extract base model number)
+          // GMC271812 -> GMC28, GMC283015 -> GMC28/GMC30, GMC1005020 -> GMC100, etc.
+          const idMatch = identification.match(/GMC(\d+)/);
+          let dwgName = '';
+          if (idMatch) {
+            const baseNum = idMatch[1];
+            // Map to available DWG files
+            if (baseNum.startsWith('271') || baseNum.startsWith('283')) dwgName = 'GMC28';
+            else if (baseNum.startsWith('28') || baseNum.startsWith('30')) dwgName = 'GMC30';
+            else if (baseNum.startsWith('384')) dwgName = 'GMC384015';
+            else if (baseNum.startsWith('40')) dwgName = 'GMC40';
+            else if (baseNum.startsWith('75')) dwgName = 'GMC75';
+            else if (baseNum.startsWith('100')) dwgName = 'GMC100';
+            else if (baseNum.startsWith('105')) dwgName = 'GMC105';
+          }
+          
+          // 3D Model image (first placeholder)
+          if (visuals[0]) {
+            visuals[0].innerHTML = `<img src="assets/GMC-Channels/c-channels/3d-models/${identification}.png" 
+              alt="${identification} 3D Model" 
+              style="max-width:100%;max-height:100%;object-fit:contain"
+              onerror="this.parentElement.innerHTML='<span>3D Model</span>'" />`;
+          }
+          
+          // Dimensional Drawing (second placeholder)
+          if (visuals[1] && dwgName) {
+            visuals[1].innerHTML = `<img src="assets/GMC-Channels/c-channels/DWG/${dwgName}.png" 
+              alt="${identification} Dimensional Drawing" 
+              style="max-width:100%;max-height:100%;object-fit:contain"
+              onerror="this.parentElement.innerHTML='<span>Dimensional Drawing</span>'" />`;
+          }
+          
+          // Cross Section image (third placeholder)
+          if (visuals[2]) {
+            visuals[2].innerHTML = `<img src="assets/GMC-Channels/c-channels/CROSS-SECTION/${identification}.PNG" 
+              alt="${identification} Cross Section" 
+              style="max-width:100%;max-height:100%;object-fit:contain"
+              onerror="this.parentElement.innerHTML='<span>Section View</span>'" />`;
+          }
+        }
+        
+        // Update specification description if available
+        if (product.description) {
+          const specCard = document.querySelector('.meta .card:first-child');
+          const descP = specCard.querySelector('p');
+          descP.textContent = product.description;
+        }
+        
+        // Update mounting method
+        if (product.mountingMethod) {
+          const mountCard = document.querySelector('.meta .card:first-child');
+          const mountP = mountCard.querySelectorAll('p')[1];
+          if (mountP) mountP.textContent = product.mountingMethod;
+        }
+        
+        // Update technical data
+        if (product.technicalData) {
+          const techCard = document.querySelector('.meta .card:nth-child(2)');
+          const list = techCard.querySelector('.list');
+          list.innerHTML = '';
+          
+          // Material 1
+          if (product.technicalData.material1) {
+            list.innerHTML += `
+              <div class="kv"><div class="k">Material:</div><div class="v">${product.technicalData.material1}</div></div>
+              <div class="kv"><div class="k">Material type:</div><div class="v">${product.technicalData.materialType1 || 'N/A'}</div></div>
+            `;
+          }
+          
+          // Material 2 if available
+          if (product.technicalData.material2) {
+            list.innerHTML += `
+              <div class="kv"><div class="k">Material:</div><div class="v">${product.technicalData.material2}</div></div>
+              <div class="kv"><div class="k">Material type:</div><div class="v">hot-dip galvanized<br>epoxy coated</div></div>
+            `;
+          }
+        }
+        
+        // Update properties table
+        if (product.properties && product.properties.identification) {
+          const tbody = document.querySelector('.props tbody');
+          const size = product.properties.size ? product.properties.size.replace(/×/g, 'x') : '—';
+          tbody.innerHTML = `
+            <tr>
+              <td>${product.properties.identification || '—'}</td>
+              <td>${size}</td>
+              <td>${product.properties.area_mm2 || '—'}</td>
+              <td>${product.properties.weight_kg_m || '—'}</td>
+              <td>${product.properties.cd_mm || '—'}</td>
+              <td>${product.properties.iz_mm4 || '—'}</td>
+              <td>${product.properties.iy_mm4 || '—'}</td>
+              <td>${product.properties.wz_mm3 || '—'}</td>
+              <td>${product.properties.wy_mm3 || '—'}</td>
+            </tr>
+          `;
+          
+          // Update type strip with identification
+          const typeText = product.properties.identification.replace('GMC', 'GMC');
+          const sizeParts = size.split('x'); // e.g., "28x30x1.5" -> ["28", "30", "1.5"]
+          if (sizeParts.length >= 3) {
+            document.querySelector('.type-strip b').textContent = `Type GMC${sizeParts[0]} ${sizeParts[1]} ${sizeParts[2]}`;
+          } else {
+            document.querySelector('.type-strip b').textContent = `Type ${product.properties.identification}`;
+          }
+        }
+        
+        // Update load cases table
+        if (product.loadCases && product.loadCases.data && product.loadCases.data.length > 0) {
+          const wrapper = document.querySelector('.loads-wrapper');
+          wrapper.innerHTML = ''; // Clear placeholder rows
+          
+          product.loadCases.data.forEach(row => {
+            const div = document.createElement('div');
+            div.className = 'load-row';
+            div.innerHTML = `
+              <div class="cell">${row.span_mm}</div>
+              <div class="cell">${row.case1 !== null ? row.case1 : '—'}</div>
+              <div class="cell">${row.case2 !== null ? row.case2 : '—'}</div>
+              <div class="cell">${row.case3 !== null ? row.case3 : '—'}</div>
+              <div class="cell">${row.case4 !== null ? row.case4 : '—'}</div>
+              <div class="cell">${row.case5 !== null ? row.case5 : '—'}</div>
+            `;
+            wrapper.appendChild(div);
+          });
+        }
+        
+        // Update page number (based on product.page if available)
+        const pageFooter = document.querySelector('.page-footer span:last-child');
+        if (product.page && pageFooter) {
+          pageFooter.textContent = `PAGE ${product.page}`;
+        }
+        
+        console.log('Product loaded:', product.title);
+        
+      } catch (error) {
+        console.error('Error loading product:', error);
+        document.querySelector('.title').textContent = 'Error loading product data';
+      }
+    }
+    
+    // Load product on page load
+    loadProduct();
+  </script>
+
+    <!-- Load Navbar Component -->
+    <script>
+        // Load navbar component after DOM is ready
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                const placeholder = document.getElementById('navbar-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Footer Component -->
+    <script>
+        // Load footer component after DOM is ready
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const placeholder = document.getElementById('footer-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                }
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>
