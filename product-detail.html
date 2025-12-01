@@ -98,18 +98,23 @@
         }
 
         .product-card .view-details {
-            display: inline-block;
-            background: #0d3d12;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%);
             color: white;
-            padding: 8px 20px;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 14px;
-            transition: background 0.3s;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);
         }
 
         .product-card .view-details:hover {
-            background: #1b5e20;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(82, 180, 85, 0.4);
         }
 
         /* Product Detail Modal/Section */
@@ -538,6 +543,9 @@
                     <div class="product-code">Page: ${product.page}</div>
                     <a href="#" class="view-details" onclick="event.stopPropagation(); navigateToStrutTemplate('${product.id}')">
                         View Details
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </a>
                 </div>
             `).join('');

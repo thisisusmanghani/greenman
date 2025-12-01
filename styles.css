@@ -2,9 +2,9 @@
         /* ========== ENHANCED GLOBAL STYLES ========== */
         :root {
             --primary-green: #1B5E20;
-            --secondary-green: #2D9F3C;
-            --dark-green: #0d3518;
-            --light-green: #4CAF50;
+            --secondary-green: #1B5E20;
+            --dark-green: #1B5E20;
+            --light-green: #1B5E20;
             --white: #ffffff;
             --light-gray: #f5f5f5;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -26,12 +26,12 @@
         /* ========== ENHANCED HERO SECTION ========== */
         .hero {
             position: relative;
-            min-height: 85vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             overflow: hidden;
             background: transparent;
-            padding: 60px 0;
+            padding: 0;
         }
         
         .hero-background {
@@ -79,16 +79,17 @@
             position: relative;
             z-index: 2;
             max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 30px;
+            margin: 0;
+            padding: 0 30px;
             color: var(--white);
         }
         
         .hero h1 {
-            font-size: 64px;
+            font-size: 55px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 3px;
+            margin-top: 0;
             margin-bottom: 30px;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             line-height: 1.2;
@@ -194,7 +195,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(27, 94, 32, 0.35) 0%, rgba(45, 159, 60, 0.45) 100%);
+            background: rgba(27, 94, 32, 0.7);
             opacity: 0;
             transition: opacity 0.5s ease;
         }
@@ -283,6 +284,809 @@
         
         .col-2 {
             grid-column: span 2;
+        }
+        
+        /* ========== INDUSTRIAL SOLUTIONS SECTION ========== */
+        .industrial-solutions-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+        }
+        
+        .industrial-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .industrial-images {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .main-image {
+            grid-column: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 4px solid var(--secondary-green);
+            position: relative;
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .main-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .sub-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .sub-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--secondary-green);
+            position: relative;
+        }
+        
+        .sub-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .sub-image:hover img {
+            transform: scale(1.08);
+        }
+        
+        .industrial-content {
+            padding: 20px;
+        }
+        
+        .industrial-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .industrial-content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-green), var(--light-green));
+            border-radius: 2px;
+        }
+        
+        .industrial-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+        
+        /* Responsive Design for Industrial Solutions */
+        @media (max-width: 1024px) {
+            .industrial-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .industrial-content h2 {
+                font-size: 36px;
+            }
+            
+            .industrial-content p {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .industrial-solutions-section {
+                padding: 60px 0;
+            }
+            
+            .industrial-container {
+                padding: 0 20px;
+                gap: 30px;
+            }
+            
+            .industrial-content h2 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            
+            .industrial-content p {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            
+            .sub-images {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .industrial-content h2 {
+                font-size: 28px;
+            }
+            
+            .industrial-content p {
+                font-size: 14px;
+            }
+        }
+        
+        /* ========== GLOBAL PARTNER SECTION ========== */
+        .global-partner-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .global-partner-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: var(--secondary-green);
+            opacity: 0.03;
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .global-partner-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .global-partner-content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .global-partner-text {
+            padding-right: 20px;
+        }
+
+        .global-partner-header {
+            width: 100%;
+        }
+
+        .global-partner-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .global-partner-header h2 span {
+            color: var(--secondary-green);
+        }
+
+        .global-partner-intro {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .global-partner-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .global-partner-images-wrapper {
+            position: relative;
+            padding: 20px;
+        }
+
+        .diagonal-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .diagonal-line {
+            position: absolute;
+            width: 2px;
+            height: 150%;
+            background: linear-gradient(180deg, transparent 0%, var(--secondary-green) 30%, var(--secondary-green) 70%, transparent 100%);
+            transform: rotate(-45deg);
+            opacity: 0.15;
+        }
+
+        .diagonal-line:nth-child(1) {
+            left: 10%;
+            top: -25%;
+        }
+
+        .diagonal-line:nth-child(2) {
+            left: 35%;
+            top: -25%;
+        }
+
+        .diagonal-line:nth-child(3) {
+            left: 60%;
+            top: -25%;
+        }
+
+        .diagonal-line:nth-child(4) {
+            left: 85%;
+            top: -25%;
+        }
+
+        .global-partner-image-gallery {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-image {
+            position: absolute;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            opacity: 0.92;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+            opacity: 1;
+            z-index: 10 !important;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Random positioned overlapping layout */
+        .gallery-image[data-position="1"] {
+            width: 280px;
+            height: 200px;
+            top: 15%;
+            left: 8%;
+            transform: rotate(-3deg);
+            z-index: 3;
+        }
+
+        .gallery-image[data-position="2"] {
+            width: 320px;
+            height: 220px;
+            top: 5%;
+            right: 12%;
+            transform: rotate(5deg);
+            z-index: 5;
+        }
+
+        .gallery-image[data-position="3"] {
+            width: 300px;
+            height: 210px;
+            bottom: 25%;
+            left: 18%;
+            transform: rotate(2deg);
+            z-index: 4;
+        }
+
+        .gallery-image[data-position="4"] {
+            width: 290px;
+            height: 205px;
+            top: 45%;
+            left: 35%;
+            transform: rotate(-4deg);
+            z-index: 6;
+        }
+
+        .gallery-image[data-position="5"] {
+            width: 310px;
+            height: 215px;
+            bottom: 12%;
+            right: 8%;
+            transform: rotate(3deg);
+            z-index: 2;
+        }
+
+        .gallery-image[data-position="6"] {
+            width: 295px;
+            height: 200px;
+            top: 35%;
+            right: 25%;
+            transform: rotate(-2deg);
+            z-index: 7;
+        }
+
+        .global-partner-image {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            display: none;
+        }
+
+        .global-partner-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .global-partner-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .why-contractors-section {
+            margin-top: 60px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .why-contractors-section h3 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 50px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .why-contractors-section h3 span {
+            color: var(--secondary-green);
+        }
+
+        .contractors-reasons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .reason-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-green);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .reason-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            border-left-color: var(--light-green);
+        }
+
+        .reason-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: transparent;
+            border: 3px solid var(--primary-green);
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 10px;
+        }
+
+        .reason-number img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(1294%) hue-rotate(99deg) brightness(95%) contrast(96%);
+        }
+
+        .reason-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+        }
+
+        .reason-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* Contractors Diagram */
+        .contractors-diagram {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .diagram-center {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.4;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .diagram-text {
+            padding: 20px;
+        }
+
+        .diagram-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .diagram-line {
+            position: absolute;
+            width: 2px;
+            height: 120px;
+            background: linear-gradient(180deg, var(--secondary-green), transparent);
+            transform-origin: bottom center;
+        }
+
+        .diagram-line.line-1 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%) rotate(-90deg);
+        }
+
+        .diagram-line.line-2 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%) rotate(-35deg);
+        }
+
+        .diagram-line.line-3 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%) rotate(18deg);
+        }
+
+        .diagram-line.line-4 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%) rotate(70deg);
+        }
+
+        .diagram-line.line-5 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%) rotate(125deg);
+        }
+
+        .diagram-nodes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .diagram-node {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--secondary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-green);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .diagram-node:hover {
+            transform: scale(1.15);
+            border-color: var(--light-green);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .diagram-node.node-1 {
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+        }
+
+        .diagram-node.node-2 {
+            top: 20%;
+            right: 25%;
+        }
+
+        .diagram-node.node-3 {
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .diagram-node.node-4 {
+            top: 20%;
+            left: 25%;
+        }
+
+        .diagram-node.node-5 {
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+
+        /* Responsive Design for Global Partner */
+        @media (max-width: 1024px) {
+            .global-partner-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 60px;
+            }
+
+            .global-partner-text {
+                padding-right: 0;
+            }
+
+            .global-partner-header h2 {
+                font-size: 40px;
+            }
+
+            .global-partner-image-gallery {
+                height: 450px;
+            }
+
+            .gallery-image[data-position="1"] {
+                width: 220px;
+                height: 160px;
+                top: 10%;
+                left: 5%;
+            }
+
+            .gallery-image[data-position="2"] {
+                width: 250px;
+                height: 175px;
+                top: 8%;
+                right: 8%;
+            }
+
+            .gallery-image[data-position="3"] {
+                width: 230px;
+                height: 165px;
+                bottom: 30%;
+                left: 15%;
+            }
+
+            .gallery-image[data-position="4"] {
+                width: 225px;
+                height: 160px;
+                top: 48%;
+                left: 32%;
+            }
+
+            .gallery-image[data-position="5"] {
+                width: 240px;
+                height: 170px;
+                bottom: 15%;
+                right: 5%;
+            }
+
+            .gallery-image[data-position="6"] {
+                width: 235px;
+                height: 165px;
+                top: 38%;
+                right: 22%;
+            }
+
+            .why-contractors-section h3 {
+                font-size: 36px;
+            }
+
+            .contractors-reasons {
+                gap: 25px;
+            }
+
+            .contractors-diagram {
+                height: 400px;
+            }
+
+            .diagram-center {
+                width: 150px;
+                height: 150px;
+                font-size: 14px;
+            }
+
+            .diagram-node {
+                width: 50px;
+                height: 50px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .global-partner-section {
+                padding: 60px 0;
+            }
+
+            .global-partner-container {
+                padding: 0 20px;
+            }
+
+            .global-partner-header h2 {
+                font-size: 32px;
+            }
+
+            .global-partner-intro {
+                font-size: 16px;
+            }
+
+            .global-partner-description {
+                font-size: 15px;
+            }
+
+            .global-partner-content-wrapper {
+                margin-bottom: 50px;
+            }
+
+            .global-partner-image-gallery {
+                height: 550px;
+            }
+
+            .gallery-image[data-position="1"] {
+                width: 180px;
+                height: 135px;
+                top: 5%;
+                left: 8%;
+            }
+
+            .gallery-image[data-position="2"] {
+                width: 190px;
+                height: 140px;
+                top: 2%;
+                right: 5%;
+            }
+
+            .gallery-image[data-position="3"] {
+                width: 175px;
+                height: 130px;
+                top: 32%;
+                left: 5%;
+            }
+
+            .gallery-image[data-position="4"] {
+                width: 185px;
+                height: 138px;
+                top: 28%;
+                right: 8%;
+            }
+
+            .gallery-image[data-position="5"] {
+                width: 195px;
+                height: 145px;
+                bottom: 15%;
+                left: 10%;
+            }
+
+            .gallery-image[data-position="6"] {
+                width: 180px;
+                height: 135px;
+                bottom: 18%;
+                right: 5%;
+            }
+
+            .why-contractors-section h3 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .contractors-reasons {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .reason-item {
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .reason-number {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+
+            .reason-content h4 {
+                font-size: 16px;
+            }
+
+            .reason-content p {
+                font-size: 14px;
+            }
+
+            .contractors-diagram {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .global-partner-header h2 {
+                font-size: 28px;
+            }
+
+            .why-contractors-section h3 {
+                font-size: 24px;
+            }
+
+            .reason-item {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .global-partner-image-gallery {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
         }
         
         /* ========== PRODUCT DETAIL SECTION ========== */
@@ -464,7 +1268,7 @@
         }
         
         .technical-table thead {
-            background: linear-gradient(135deg, #4DB748, #2D9F3C);
+            background: linear-gradient(135deg, #1B5E20, #1B5E20);
         }
         
         .technical-table thead th {
@@ -641,28 +1445,26 @@
         }
         
         .product-btn {
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: var(--transition);
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
         
         .product-btn.primary {
-            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(45, 159, 60, 0.3);
+            background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);
         }
         
         .product-btn.primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(82, 180, 85, 0.4);
         }
         
         .product-btn.secondary {

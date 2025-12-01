@@ -14,13 +14,13 @@
         }
 
         .product-hero h1 {
-            font-size: 1.4rem;
+            font-size: 1.82rem;
             margin-bottom: 8px;
             font-weight: 700;
         }
 
         .product-hero p {
-            font-size: 0.75rem;
+            font-size: 0.975rem;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.4;
@@ -31,7 +31,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 25px 15px;
-            zoom: 0.8;
+            zoom: 1.04;
         }
 
         .product-section {
@@ -46,7 +46,7 @@
 
         .product-section h2 {
             color: #1B5E20;
-            font-size: 1.3rem;
+            font-size: 1.69rem;
             margin-bottom: 15px;
             text-align: center;
         }
@@ -61,7 +61,7 @@
 
         .specification-box h3 {
             color: #1B5E20;
-            font-size: 1rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
             padding-bottom: 6px;
             border-bottom: 2px solid #2D9F3C;
@@ -86,12 +86,12 @@
             display: block;
             color: #1B5E20;
             margin-bottom: 3px;
-            font-size: 0.7rem;
+            font-size: 0.91rem;
         }
 
         .spec-item span {
             color: #333;
-            font-size: 0.75rem;
+            font-size: 0.975rem;
         }
 
         .images-grid {
@@ -128,6 +128,7 @@
             height: auto;
             display: block;
             padding: 10px;
+            padding-top: 20px;
             background: white;
             margin: 0 auto;
         }
@@ -141,13 +142,13 @@
 
         .product-definition h3 {
             color: #1B5E20;
-            font-size: 1rem;
+            font-size: 1.3rem;
             margin-bottom: 8px;
         }
 
         .product-definition p {
             color: #333;
-            font-size: 0.75rem;
+            font-size: 0.975rem;
             line-height: 1.5;
         }
 
@@ -167,21 +168,29 @@
         }
 
         thead {
-            background: linear-gradient(135deg, #1B5E20, #2D9F3C);
+            background: #1B5E20;
             color: white;
         }
 
-        th, td {
+        th {
+            padding: 15px 12px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td {
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
-        }
-
-        th {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
         }
 
         tbody tr:hover {
@@ -192,7 +201,16 @@
             border-bottom: none;
         }
 
+        .desktop-spacing {
+            display: block;
+            margin-bottom: 30px;
+        }
+
         @media (max-width: 768px) {
+            .desktop-spacing {
+                display: none;
+            }
+
             .product-hero h1 {
                 font-size: 1.2rem;
             }
@@ -214,6 +232,7 @@
 <body>
     <!-- Navigation -->
     <div id="navbar-container"></div>
+    <div class="desktop-spacing"></div>
 
     <!-- Product Hero -->
     <section class="product-hero">
@@ -525,17 +544,22 @@
 
     <script>
         // Load navbar and footer
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            });
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
+        Promise.all([
+            fetch('navbar.html').then(response => response.text()),
+            fetch('footer.html').then(response => response.text())
+        ]).then(([navbarData, footerData]) => {
+            const navbarContainer = document.getElementById('navbar-container');
+            const footerContainer = document.getElementById('footer-container');
+            
+            if (navbarContainer) navbarContainer.innerHTML = navbarData;
+            if (footerContainer) footerContainer.innerHTML = footerData;
+            
+            // Load navbar.js after HTML is injected
+            const navScript = document.createElement('script');
+            navScript.src = 'navbar.js';
+            navScript.defer = true;
+            document.body.appendChild(navScript);
+        }).catch(error => console.error('Error loading navbar/footer:', error));
     </script>
 </body>
 </html>

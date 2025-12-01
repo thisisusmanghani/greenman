@@ -82,7 +82,7 @@
 
         /* Blog Hero Section */
         .blog-hero {
-            background: linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #66BB6A 100%);
+            background: var(--primary-green);
             color: white;
             padding: 80px 30px 0;
             position: relative;
@@ -307,7 +307,7 @@
 
         .featured-badge {
             display: inline-block;
-            background: var(--accent-orange);
+            background: var(--primary-green);
             color: white;
             padding: 8px 20px;
             border-radius: 25px;
@@ -526,23 +526,23 @@
 
     <!-- Load Navbar -->
     <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-
-        // Load footer component
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                const footerPlaceholder = document.getElementById('footer-placeholder');
-                if (footerPlaceholder) {
-                    footerPlaceholder.innerHTML = data;
-                }
-            })
-            .catch(error => console.error('Error loading footer:', error));
+        // Load navbar and footer
+        Promise.all([
+            fetch('navbar.html').then(response => response.text()),
+            fetch('footer.html').then(response => response.text())
+        ]).then(([navbarData, footerData]) => {
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            
+            if (navbarPlaceholder) navbarPlaceholder.innerHTML = navbarData;
+            if (footerPlaceholder) footerPlaceholder.innerHTML = footerData;
+            
+            // Load navbar.js after HTML is injected
+            const navScript = document.createElement('script');
+            navScript.src = 'navbar.js';
+            navScript.defer = true;
+            document.body.appendChild(navScript);
+        }).catch(error => console.error('Error loading navbar/footer:', error));
     </script>
 
     <!-- Blog Data and Functionality -->
@@ -655,7 +655,7 @@
                 title: "Corrosion Protection: Galvanized vs. Epoxy Coatings",
                 excerpt: "Understanding coating options to maximize the service life of steel mounting systems in various environmental conditions.",
                 category: "technical",
-                image: "https://images.unsplash.com/photo-1565344397716-8db0cbf92b19?w=800",
+                image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=800",
                 date: "November 2, 2025",
                 readTime: "7 min read",
                 featured: false,
@@ -910,10 +910,10 @@
                                     <span class="blog-card-category">${this.formatCategory(article.category)}</span>
                                 </div>
                                 <div class="blog-card-content">
-                                    <span class="featured-badge">⭐ Featured Article</span>
+                                    <span class="featured-badge">★ Featured Article</span>
                                     <div class="blog-card-meta">
-                                        <span>📅 ${article.date}</span>
-                                        <span>⏱️ ${article.readTime}</span>
+                                        <span><img src="https://cdn-icons-png.flaticon.com/512/2838/2838779.png" alt="calendar" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> ${article.date}</span>
+                                        <span><img src="assets/reading-book.png" alt="read time" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> ${article.readTime}</span>
                                     </div>
                                     <h3>${article.title}</h3>
                                     <p>${article.excerpt}</p>
@@ -933,8 +933,8 @@
                             </div>
                             <div class="blog-card-content">
                                 <div class="blog-card-meta">
-                                    <span>📅 ${article.date}</span>
-                                    <span>⏱️ ${article.readTime}</span>
+                                    <span><img src="https://cdn-icons-png.flaticon.com/512/2838/2838779.png" alt="calendar" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> ${article.date}</span>
+                                    <span><img src="assets/reading-book.png" alt="read time" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> ${article.readTime}</span>
                                 </div>
                                 <h3>${article.title}</h3>
                                 <p>${article.excerpt}</p>

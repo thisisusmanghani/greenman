@@ -36,12 +36,12 @@
             <div class="accessories-table-container" style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
                 <table class="accessories-table" style="width: 100%; border-collapse: collapse;">
                     <thead>
-                        <tr style="background: linear-gradient(135deg, #4DB748 0%, #2D9F3C 100%);">
-                            <th style="padding: 18px 20px; text-align: left; color: white; font-weight: 600; font-size: 14px; border-right: 1px solid rgba(255,255,255,0.1);">#</th>
-                            <th style="padding: 18px 20px; text-align: left; color: white; font-weight: 600; font-size: 14px; border-right: 1px solid rgba(255,255,255,0.1);">Product Category</th>
-                            <th style="padding: 18px 20px; text-align: center; color: white; font-weight: 600; font-size: 14px; border-right: 1px solid rgba(255,255,255,0.1);">Code Prefix</th>
-                            <th style="padding: 18px 20px; text-align: center; color: white; font-weight: 600; font-size: 14px; border-right: 1px solid rgba(255,255,255,0.1);">Image</th>
-                            <th style="padding: 18px 20px; text-align: center; color: white; font-weight: 600; font-size: 14px;">Action</th>
+                        <tr style="background: #1B5E20;">
+                            <th style="padding: 15px 12px; text-align: left; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">#</th>
+                            <th style="padding: 15px 12px; text-align: left; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">Product Category</th>
+                            <th style="padding: 15px 12px; text-align: center; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">Code Prefix</th>
+                            <th style="padding: 15px 12px; text-align: center; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">Image</th>
+                            <th style="padding: 15px 12px; text-align: center; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -159,19 +159,23 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        // Load navbar
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-
-        // Load footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
+        // Load navbar and footer
+        Promise.all([
+            fetch('navbar.html').then(response => response.text()),
+            fetch('footer.html').then(response => response.text())
+        ]).then(([navbarData, footerData]) => {
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            
+            if (navbarPlaceholder) navbarPlaceholder.innerHTML = navbarData;
+            if (footerPlaceholder) footerPlaceholder.innerHTML = footerData;
+            
+            // Load navbar.js after HTML is injected
+            const navScript = document.createElement('script');
+            navScript.src = 'navbar.js';
+            navScript.defer = true;
+            document.body.appendChild(navScript);
+        }).catch(error => console.error('Error loading navbar/footer:', error));
 
         // Hide page loader
         window.addEventListener('load', function() {

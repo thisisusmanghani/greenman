@@ -140,27 +140,23 @@
 
     <!-- Load Navbar Component -->
     <script>
-        // Load navbar component after DOM is ready
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                const placeholder = document.getElementById('navbar-placeholder');
-                if (placeholder) {
-                    placeholder.innerHTML = data;
-                }
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-
-        // Load footer component
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                const footerPlaceholder = document.getElementById('footer-placeholder');
-                if (footerPlaceholder) {
-                    footerPlaceholder.innerHTML = data;
-                }
-            })
-            .catch(error => console.error('Error loading footer:', error));
+        // Load navbar and footer components
+        Promise.all([
+            fetch('navbar.html').then(r => r.text()),
+            fetch('footer.html').then(r => r.text())
+        ]).then(([navbarData, footerData]) => {
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            
+            if (navbarPlaceholder) navbarPlaceholder.innerHTML = navbarData;
+            if (footerPlaceholder) footerPlaceholder.innerHTML = footerData;
+            
+            // Load navbar JavaScript AFTER HTML is injected
+            const navScript = document.createElement('script');
+            navScript.src = 'navbar.js';
+            navScript.defer = true;
+            document.body.appendChild(navScript);
+        }).catch(error => console.error('Error loading components:', error));
     </script>
 </body>
 </html>
