@@ -270,10 +270,16 @@
             if (navbarPlaceholder) navbarPlaceholder.innerHTML = navbarData;
             if (footerPlaceholder) footerPlaceholder.innerHTML = footerData;
             
-            // Load navbar JavaScript after HTML is injected
+            // Load navbar JavaScript AFTER HTML is injected
             const navScript = document.createElement('script');
             navScript.src = 'navbar.js';
             navScript.defer = true;
+            navScript.onload = function() {
+                console.log('Navbar JavaScript loaded successfully');
+            };
+            navScript.onerror = function() {
+                console.error('Failed to load navbar JavaScript');
+            };
             document.body.appendChild(navScript);
         }).catch(error => console.error('Error loading components:', error));
     </script>

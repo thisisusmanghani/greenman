@@ -67,7 +67,7 @@
         }
 
         .loader-text {
-            color: var(--primary-green);
+            color: #f0f0f0;
             font-size: 1.5rem;
             font-weight: 700;
         }
@@ -154,7 +154,8 @@
         .contact-info h2 {
             font-size: 2rem;
             margin-bottom: 30px;
-            color: var(--light-green);
+            color: #f0f0f0;
+            font-weight: 700;
         }
 
         .contact-info-item {
@@ -178,7 +179,8 @@
         .contact-info-content h3 {
             font-size: 1.1rem;
             margin-bottom: 8px;
-            color: var(--light-green);
+            color: #f0f0f0;
+            font-weight: 700;
         }
 
         .contact-info-content p {
@@ -195,7 +197,8 @@
         .contact-social h3 {
             font-size: 1.2rem;
             margin-bottom: 20px;
-            color: var(--light-green);
+            color: #f0f0f0;
+            font-weight: 700;
         }
 
         .social-links {
@@ -229,7 +232,8 @@
 
         .contact-form-section h2 {
             font-size: 2rem;
-            color: var(--primary-green);
+            color: var(--light-green);
+            font-weight: 700;
             margin-bottom: 30px;
         }
 
@@ -401,7 +405,7 @@
                 <h2>Contact Information</h2>
                 
                 <div class="contact-info-item">
-                    <div class="contact-info-icon">📧</div>
+                    <div class="contact-info-icon">@</div>
                     <div class="contact-info-content">
                         <h3>Email Us</h3>
                         <p>info@greenman-solutions.com</p>
@@ -409,7 +413,7 @@
                 </div>
 
                 <div class="contact-info-item">
-                    <div class="contact-info-icon">📞</div>
+                    <div class="contact-info-icon">☎</div>
                     <div class="contact-info-content">
                         <h3>Call Us</h3>
                         <p>+92 345 5388367</p>
@@ -418,7 +422,7 @@
                 </div>
 
                 <div class="contact-info-item">
-                    <div class="contact-info-icon">💬</div>
+                    <div class="contact-info-icon">W</div>
                     <div class="contact-info-content">
                         <h3>WhatsApp</h3>
                         <p>Quick response on WhatsApp</p>
@@ -432,7 +436,7 @@
                         <a href="#" class="social-link" title="Facebook">f</a>
                         <a href="#" class="social-link" title="LinkedIn">in</a>
                         <a href="#" class="social-link" title="Twitter">𝕏</a>
-                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="#" class="social-link" title="Instagram">IG</a>
                     </div>
                 </div>
             </div>
@@ -449,22 +453,22 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="phone" placeholder="+92 345 5388367" pattern="^(\+92|0)?[0-9]{10,11}$" title="Enter a valid Pakistani phone number">
                         </div>
                     </div>
 
@@ -502,8 +506,16 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <!-- Load Navbar -->
     <script>
+        // Initialize EmailJS
+        emailjs.init({
+            publicKey: 'FqhV8m2xFwFA4DIrb', // Your EmailJS public key
+        });
+
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
@@ -532,36 +544,49 @@
             }, 500);
         });
 
-        // Form Submission
+        // Form Submission with EmailJS
         const contactForm = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
+        const submitBtn = contactForm.querySelector('.submit-btn');
 
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+            // Change button text to show loading
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
             
-            // Here you would normally send to a backend API
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            successMessage.classList.add('show');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-            
-            // Optional: Send to WhatsApp or Email
-            // You can integrate with EmailJS, FormSpree, or similar services here
+            // Send email using EmailJS
+            emailjs.sendForm(
+                'service_ccmkghi',    // Your EmailJS service ID
+                'template_oe5y77p',   // Your EmailJS template ID
+                contactForm
+            ).then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+                
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('Failed to send message. Please try again or contact us directly.');
+            }).finally(() => {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
 
         console.log('%c🌿 GREEN MAN CONTACT - Ready! ', 'background: #1B5E20; color: #fff; padding: 10px; font-size: 14px; font-weight: bold; border-radius: 5px;');

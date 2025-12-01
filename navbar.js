@@ -6,38 +6,44 @@
     
     // Toggle mobile menu
     function toggleMenu() {
-        hamburger.classList.toggle('active');
-        mainNav.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        if (hamburger) hamburger.classList.toggle('active');
+        if (mainNav) mainNav.classList.toggle('active');
+        if (mobileOverlay) mobileOverlay.classList.toggle('active');
+        if (mainNav) body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
     }
     
     // Hamburger click
-    hamburger.addEventListener('click', toggleMenu);
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+    }
     
     // Overlay click to close
-    mobileOverlay.addEventListener('click', toggleMenu);
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', toggleMenu);
+    }
     
-    // Handle dropdown toggle on mobile
+    // Handle dropdown and mega menu toggle on mobile
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         const link = item.querySelector('.nav-link');
         const dropdown = item.querySelector('.dropdown');
+        const megaMenu = item.querySelector('.products-mega');
+        const hasMega = item.classList.contains('has-mega');
         
-        if (dropdown) {
-            // Prevent default and toggle dropdown on mobile
+        if (dropdown || megaMenu || hasMega) {
+            // Prevent default and toggle dropdown/mega menu on mobile
             link.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     
-                    // Close other open dropdowns
+                    // Close other open dropdowns/mega menus
                     navItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.classList.remove('dropdown-open');
                         }
                     });
                     
-                    // Toggle current dropdown
+                    // Toggle current dropdown/mega menu
                     item.classList.toggle('dropdown-open');
                 }
             });
@@ -53,7 +59,7 @@
     
     // Handle window resize
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+        if (mainNav && window.innerWidth > 768 && mainNav.classList.contains('active')) {
             toggleMenu();
         }
     });
