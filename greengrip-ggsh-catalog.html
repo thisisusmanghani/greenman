@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <title>GreenGrip Sprinkler Pipe Hanger GGSH - Product Catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <title>GreenGrip Sprinkler Pipe Hanger GGSH - Product Catalog</title>
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         * {
@@ -12,36 +16,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: #fff;
             color: #333;
-        }
-
-        .header {
-            background: linear-gradient(90deg, #004d40 0%, #004d40 75%, #4CAF50 75%, #4CAF50 100%);
-            color: white;
-            padding: 20px 40px;
-            display: none;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header h1 {
-            font-size: 24px;
-            font-weight: normal;
-        }
-
-        .product-range {
-            font-weight: normal;
-        }
-
-        .brand {
-            background: #4CAF50;
-            padding: 5px 20px;
-            font-weight: bold;
-            font-size: 20px;
         }
 
         .content {
@@ -478,11 +457,6 @@
     <!-- Navigation Bar -->
     <div id="navbar-placeholder"></div>
 
-    <div class="header">
-        <h1><span class="product-range">PRODUCT</span> RANGE</h1>
-        <div class="brand">GREEN MAN</div>
-    </div>
-
     <div class="content">
         <div class="product-header">
             <div style="flex: 1;">
@@ -584,34 +558,52 @@
         <div class="footer-page" id="pageNumber">PAGE 55</div>
     </div>
 
-    <!-- Footer -->
+    <!-- Load Navbar Component -->
+    <script>
+        // Load navbar component immediately
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    const placeholder = document.getElementById('navbar-placeholder');
+                    if (placeholder) {
+                        placeholder.innerHTML = data;
+                        
+                        // Load navbar.js after HTML is injected
+                        const navScript = document.createElement('script');
+                        navScript.src = 'navbar.js';
+                        navScript.defer = true;
+                        document.body.appendChild(navScript);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading navbar:', error);
+                })
+                .finally(() => {
+                    // Always add loaded class to show content
+                    document.body.classList.add('loaded');
+                });
+        });
+    </script>
+
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <script src="js/greengrip-ggsh-renderer.js"></script>
-    
+    <!-- Load Footer Component -->
     <script>
-        // Load navbar
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-
-        // Load footer
+        // Load footer component
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
+                const placeholder = document.getElementById('footer-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                }
             })
             .catch(error => console.error('Error loading footer:', error));
-
-        // Hide page loader
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.body.classList.add('loaded');
-            }, 100);
-        });
     </script>
+
+    <!-- Product Renderer Script -->
+    <script src="js/greengrip-ggsh-renderer.js"></script>
 </body>
 </html>
