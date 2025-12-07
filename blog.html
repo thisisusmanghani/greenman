@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <title>Blog - Green Man Industrial Solutions</title>
+
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
     <style>
         /* Blog Page Styles */
@@ -22,8 +28,18 @@
             box-sizing: border-box;
         }
 
+        
+        /* Hide content until fully loaded */
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+        body:not(.loaded) > *:not(.page-loader) {
+            visibility: hidden;
+            opacity: 0;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: #f5f5f5;
             color: #333;
             line-height: 1.6;
@@ -48,6 +64,7 @@
             opacity: 0;
             visibility: hidden;
         }
+        body.loaded > *:not(.page-loader){visibility:visible;opacity:1;transition:opacity .3s ease-in}
 
         .loader-content {
             text-align: center;
@@ -475,6 +492,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
+    <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
     <!-- Page Loader -->
@@ -565,7 +583,7 @@
                     <h3>Key Specifications</h3>
                     <ul>
                         <li><strong>Material:</strong> S250GD / S235 JR high-quality steel</li>
-                        <li><strong>Coating Options:</strong> Pre-galvanized (Z-275), Hot-Dip Galvanized (HDG), Epoxy Coated</li>
+                        <li><strong>Coating Options:</strong> Pre-galvanized (Z-275), ➤Hot-dip galvanized (HDG), ➤Epoxy coated</li>
                         <li><strong>Standard Length:</strong> 3.6 meters</li>
                         <li><strong>Size Range:</strong> From 27x18x1.2mm to 41x62x2.5mm</li>
                     </ul>
@@ -598,7 +616,7 @@
 
                     <h3>Technical Specifications</h3>
                     <ul>
-                        <li><strong>Materials:</strong> S250GD (pre-galvanized Z-275) and S235 JR (HDG or epoxy coated)</li>
+                        <li><strong>Materials:</strong> S250GD (pre-galvanized Z-275) and S235 JR (HDG or ➤Epoxy coated)</li>
                         <li><strong>Standard Length:</strong> 3.6 meters</li>
                         <li><strong>Profile Size:</strong> 41x21mm to 41x62mm thickness range</li>
                         <li><strong>Mounting Method:</strong> Form-locking connections and shear hole haunch connections</li>
@@ -643,10 +661,10 @@
                     <h3>Material Options</h3>
                     <p>All accessories available in multiple finishes:</p>
                     <ul>
-                        <li>Electro-galvanized (Z-275)</li>
-                        <li>Hot-dip galvanized</li>
-                        <li>Epoxy coated</li>
-                        <li>Stainless Steel A2/A4</li>
+                        <li>➤Electro-galvanized (Z-275)</li>
+                        <li>➤Hot-dip galvanized</li>
+                        <li>➤Epoxy coated</li>
+                        <li>➤Stainless Steel A2/A4</li>
                     </ul>
                 `
             },
@@ -666,7 +684,7 @@
                     <h3>Pre-Galvanized (Z-275)</h3>
                     <p>Zinc coating applied before fabrication provides uniform protection and excellent resistance to atmospheric corrosion.</p>
 
-                    <h3>Hot-Dip Galvanized (HDG)</h3>
+                    <h3>➤Hot-dip galvanized (HDG)</h3>
                     <p>Post-fabrication zinc immersion creates a thick, robust coating ideal for outdoor and marine environments.</p>
 
                     <h3>Epoxy Coating</h3>

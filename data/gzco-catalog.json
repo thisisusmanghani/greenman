@@ -2,11 +2,11 @@
   "title": "Z-Shape Connector (GZCO)",
   "code_prefix": "GZCO",
   "specification": [
-    "electro-galvanized (Z-275)",
-    "hot-dip galvanized",
-    "epoxy coated",
-    "Stainless Steel A2/A4",
-    "Material: S250GD/S235JR"
+    "➤Electro-galvanized (Z-275)",
+    "➤Hot-dip galvanized",
+    "➤Epoxy coated",
+    "➤Stainless Steel A2/A4",
+    "➤Material: S250GD/S235JR"
   ],
   "definition": "Z-shape Connector, with two horizontal flanges and a vertical section in between. This shape helps in bridging and aligning two strut channels that are on different planes. It adds versatility to strut channel connections by allowing multiple configurations and orientations, expanding the design possibilities in structural and framing applications.",
   "items": [

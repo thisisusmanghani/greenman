@@ -2,11 +2,11 @@
   "title": "Profile bolt with tooth head GPTB",
   "code_prefix": "GPTB",
   "specification": [
-    "Material: S250GD/S235JR",
-    "Surface: electro-galvanized (Z-275)",
-    "hot-dip galvanized",
-    "epoxy coated",
-    "Stainless Steel A2/A4"
+    "➤Material: S250GD/S235JR",
+    "Surface: ➤Electro-galvanized (Z-275)",
+    "➤Hot-dip galvanized",
+    "➤Epoxy coated",
+    "➤Stainless Steel A2/A4"
   ],
   "definition": "Designed to fit into the inner slot of a strut channel, where it provides a secure threaded anchor point for quick fixing of accessories and clamps. The T-shape head has serrations or grooves that grip the inner edges of the strut channel. These serrations prevent slipping and ensure a strong, stable connection.",
   "items": [

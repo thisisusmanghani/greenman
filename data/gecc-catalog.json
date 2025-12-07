@@ -4,10 +4,10 @@
   "specification": {
     "Material": "S250GD/S235JR",
     "Surface": [
-      "electro-galvanized (Z-275)",
-      "hot-dip galvanized",
-      "epoxy coated",
-      "Stainless Steel A2/A4"
+      "➤Electro-galvanized (Z-275)",
+      "➤Hot-dip galvanized",
+      "➤Epoxy coated",
+      "➤Stainless Steel A2/A4"
     ]
   },
   "definition": "GECC is a channel connector designed to join two strut channels at edges, effectively increasing the length of the strut channel.",

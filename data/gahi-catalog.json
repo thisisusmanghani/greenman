@@ -2,11 +2,11 @@
   "title": "Adjustable Hinge (GAHI)",
   "code_prefix": "GAHI",
   "specification": [
-    "Material: S250GD/S235JR",
-    "electro-galvanized (Z-275)",
-    "hot-dip galvanized",
-    "epoxy coated",
-    "Stainless Steel A2/A4"
+    "➤Material: S250GD/S235JR",
+    "➤Electro-galvanized (Z-275)",
+    "➤Hot-dip galvanized",
+    "➤Epoxy coated",
+    "➤Stainless Steel A2/A4"
   ],
   "definition": "Adjustable pivot mechanism allows for rotation, enabling precise angle adjustments. Facilitates connection of rods to structures at customizable angles.",
   "items": [

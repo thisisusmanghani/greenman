@@ -2,11 +2,11 @@
   "title": "Reinforced Angle Connector (GRAC)",
   "code_prefix": "GRAC",
   "specification": [
-    "Material: S250GD/S235JR",
-    "Surface: electro-galvanized (Z-275)",
-    "hot-dip galvanized",
-    "epoxy coated",
-    "Stainless Steel A2/A4"
+    "➤Material: S250GD/S235JR",
+    "Surface: ➤Electro-galvanized (Z-275)",
+    "➤Hot-dip galvanized",
+    "➤Epoxy coated",
+    "➤Stainless Steel A2/A4"
   ],
   "definition": "Reinforced angle connectors are specialized components designed for connecting strut channels at typically 90 degrees. A triangular reinforcing rib along its corner adds strength and rigidity.",
   "items": [

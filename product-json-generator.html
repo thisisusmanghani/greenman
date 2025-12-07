@@ -11,8 +11,18 @@
             box-sizing: border-box;
         }
         
+        
+        /* Hide content until fully loaded */
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+        body:not(.loaded) > *:not(.page-loader) {
+            visibility: hidden;
+            opacity: 0;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
             min-height: 100vh;
@@ -173,7 +183,8 @@
         }
     </style>
 
-    </head>
+        <link rel="stylesheet" href="navbar.css">
+</head>
 <body>
     
     <!-- Navigation Bar (Loaded from navbar.html) -->
@@ -334,6 +345,8 @@
                 const placeholder = document.getElementById('navbar-placeholder');
                 if (placeholder) {
                     placeholder.innerHTML = data;
+                
+                document.body.classList.add('loaded');
                 }
             })
             .catch(error => console.error('Error loading navbar:', error));

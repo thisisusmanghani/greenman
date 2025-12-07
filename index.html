@@ -11,21 +11,37 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <title>GREEN MAN - Industrial Fastening Solutions</title>
     
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Load navbar CSS in head to prevent flash -->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="styles.css">
+    
     <!-- Critical CSS inline for faster first paint -->
     <style>
-        body{margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;overflow-x:hidden}
+        /* Hide content until fully loaded */
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+        body:not(.loaded) > *:not(.page-loader) {
+            visibility: hidden;
+            opacity: 0;
+        }
+        body{margin:0;padding:0;font-family:'Roboto',sans-serif;overflow-x:hidden}
         .page-loader{position:fixed;top:0;left:0;width:100%;height:100vh;background:linear-gradient(135deg,#1B5E20,#2D9F3C);display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity .5s,visibility .5s}
         body.loaded .page-loader{opacity:0;visibility:hidden}
+        body.loaded > *:not(.page-loader){visibility:visible;opacity:1;transition:opacity .3s ease-in}
         .loader-spinner{width:60px;height:60px;border:4px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
         @keyframes spin{to{transform:rotate(360deg)}}
         .loader-text{color:#fff;margin-top:20px;font-size:24px}
         .loader-subtext{color:rgba(255,255,255,.8);font-size:14px;margin-top:8px}
     </style>
-    
-    <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
@@ -52,10 +68,10 @@
         <div class="hero-content">
             <h1>Precision Steel Mounting<br>Solutions</h1>
             <p>Engineering excellence in steel pipe clamps and industrial fastening systems. Our products deliver unmatched strength, corrosion resistance, and long-term reliability for demanding industrial applications.</p>
-            <div class="hero-buttons">
+            <!-- <div class="hero-buttons">
                 <a href="#" class="btn">Steel Pipe Clamps</a>
                 <a href="#" class="btn">Mounting Systems</a>
-            </div>
+            </div> -->
         </div>
     </section>
     
@@ -242,6 +258,54 @@
         </div>
     </section>
 
+    <!-- Our Story Section -->
+    <section class="our-story-section bg-gray-50 py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="story-content text-left">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From a Bold Vision to a Global Force</h2>
+                    <p class="mt-4 text-lg leading-8 text-gray-600">More than a decade ago, Greenman began not as a company, but as a vision—to engineer solutions that don't just support structures, but strengthen the very foundations of progress.</p>
+                    
+                    <div class="mt-12 space-y-8">
+                        <div class="story-item">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-700 text-white">
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">A Legacy of Precision</h3>
+                                    <p class="mt-2 text-base text-gray-600">From the first bolt to the latest modular system, our journey has been one of purpose and precision, earning the trust of builders and visionaries alike.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-item">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-700 text-white">
+                                        <img src="assets/img/icons/accountability.png" alt="A New Chapter Unfolds" class="h-6 w-6" style="filter: brightness(0) invert(1);">
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">A New Chapter Unfolds</h3>
+                                    <p class="mt-2 text-base text-gray-600">Today, we are transforming into a global force, with our compass pointing toward digital intelligence, sustainable engineering.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+                
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80" alt="Greenman Vision and Global Force" class="rounded-lg shadow-lg w-full h-auto" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Industrial Solutions Section -->
     <section class="industrial-solutions-section">
         <div class="industrial-container">
@@ -351,6 +415,103 @@
         </div>
     </section>
 
+    <!-- Sustainability Section -->
+    <section class="sustainability-section py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="sustainability-content">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Engineering a Greener Tomorrow</h2>
+                    <p class="mt-4 text-lg text-gray-600">We believe construction can be a force for environmental good. Our commitment to sustainability is embedded in every aspect of our operation, from the materials we source to the products we deliver.</p>
+                    <ul class="mt-8 space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Eco-Conscious Materials</h4>
+                                <p class="mt-1 text-base text-gray-600">Utilizing low-VOC adhesives, non-toxic insulation, and recyclable plastics to minimize environmental impact.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <img src="assets/img/icons/accountability.png" alt="Carbon Accountability" class="h-6 w-6" style="filter: invert(25%) sepia(84%) saturate(1551%) hue-rotate(105deg) brightness(94%) contrast(94%);">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Carbon Accountability</h4>
+                                <p class="mt-1 text-base text-gray-600">Implementing energy-efficient production and logistics planning to reduce our carbon footprint.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Green Building Ready</h4>
+                                <p class="mt-1 text-base text-gray-600">Our LEED-compliant solutions help you achieve your project's sustainability goals.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sustainability-image">
+                    <img src="assets/img/mark-potterton-sNVkn3507Oo-unsplash.jpg" alt="Sustainable Engineering" class="rounded-lg shadow-lg" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section bg-gray-50 py-20">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="text-left">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Trusted by Industry Leaders</h2>
+                    <p class="mt-4 text-lg leading-8 text-gray-600">Our commitment to excellence is reflected in the feedback we receive from our partners and clients across the globe.</p>
+                </div>
+                <div class="testimonials-image flex justify-end">
+                    <img src="assets/img/team.png" alt="Our Team" width="128" height="128" loading="lazy">
+                </div>
+            </div>
+            <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="testimonial-body">
+                        <p class="text-gray-600">"Greenman's modular support systems have revolutionized our on-site efficiency. The quality is top-tier, and their BIM-ready designs integrated seamlessly with our workflow, saving us significant time and cost on our latest high-rise project."</p>
+                    </div>
+                    <div class="testimonial-footer mt-6 flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Carter">
+                        <div class="ml-4">
+                            <h4 class="text-base font-medium text-gray-900">John Carter</h4>
+                            <p class="text-sm text-gray-500">Lead Engineer, Apex Construction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="testimonial-body">
+                        <p class="text-gray-600">"The technical support from Greenman is unparalleled. Their engineering team provided us with seismic anchoring designs that met stringent international codes, giving us complete confidence in our infrastructure's resilience."</p>
+                    </div>
+                    <div class="testimonial-footer mt-6 flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Sanchez">
+                        <div class="ml-4">
+                            <h4 class="text-base font-medium text-gray-900">Maria Sanchez</h4>
+                            <p class="text-sm text-gray-500">Project Director, Global Infrastructure Partners</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="testimonial-body">
+                        <p class="text-gray-600">"For our renewable energy projects, Greenman's solar installation systems were a game-changer. The weld-free, bolt-on frames are robust and incredibly fast to deploy. Their focus on sustainable engineering aligns perfectly with our company's mission."</p>
+                    </div>
+                    <div class="testimonial-footer mt-6 flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/56.jpg" alt="Ahmed Al-Jamil">
+                        <div class="ml-4">
+                            <h4 class="text-base font-medium text-gray-900">Ahmed Al-Jamil</h4>
+                            <p class="text-sm text-gray-500">CEO, Sunstone Renewables</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
@@ -384,12 +545,20 @@
             navScript.defer = true;
             navScript.onload = function() {
                 console.log('Navbar JavaScript loaded successfully');
+                // Mark page as fully loaded after all components are ready
+                document.body.classList.add('loaded');
             };
             navScript.onerror = function() {
                 console.error('Failed to load navbar JavaScript');
+                document.body.classList.add('loaded'); // Still show page even if nav fails
             };
             document.body.appendChild(navScript);
-        }).catch(error => console.error('Error loading components:', error));
+        }).catch(error => {
+            console.error('Error loading components:', error);
+            document.body.classList.add('loaded'); // Still show page on error
+        
+            document.body.classList.add('loaded');
+        });
     </script>
 </body>
 </html>

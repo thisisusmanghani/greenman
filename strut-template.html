@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <title>Strut Profile – PDF-like Template</title>
   <style>
     :root{
@@ -27,7 +30,17 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:#f1f3f5;color:var(--ink);font:14px/1.4 Segoe UI,system-ui,-apple-system,Arial,sans-serif}
+    
+        /* Hide content until fully loaded */
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+        body:not(.loaded) > *:not(.page-loader) {
+            visibility: hidden;
+            opacity: 0;
+        }
+        
+        body{margin:0;background:#f1f3f5;color:var(--ink);font:14px/1.4 'Roboto',sans-serif}
     
     /* Fade in animation */
     @keyframes fadeInUp{
@@ -419,7 +432,8 @@
 
   </style>
 
-    </head>
+        <link rel="stylesheet" href="navbar.css">
+</head>
 <body>
   
     <!-- Navigation Bar (Loaded from navbar.html) -->
@@ -447,6 +461,14 @@
       </div>
     </section>
 
+    <!-- Product Definition -->
+    <section style="margin: 16px 0; padding: 16px; background: rgba(204,232,201,0.15); border-left: 4px solid var(--dark-teal); border-radius: 4px;">
+      <h3 style="color: var(--dark-teal); font-size: 15px; margin: 0 0 10px 0; font-weight: 700;">Product Definition</h3>
+      <p style="margin: 0; font-size: 12px; line-height: 1.6; color: var(--ink); text-align: justify;">
+        GM41 Strut Channels are engineered steel structural profiles designed for heavy-duty mounting and support applications in industrial, commercial, and infrastructure projects.
+      </p>
+    </section>
+
     <!-- Meta cards (Specification / Mounting method / Technical data) -->
     <section class="meta">
       <div class="card">
@@ -461,7 +483,7 @@
           <div class="kv"><div class="k">Material:</div><div class="v">S250GD</div></div>
           <div class="kv"><div class="k">Material type:</div><div class="v">pre-galvanized (Z-275)</div></div>
           <div class="kv"><div class="k">Material:</div><div class="v">S235JR</div></div>
-          <div class="kv"><div class="k">Material type:</div><div class="v">hot-dip-galvanized<br>epoxy coated</div></div>
+          <div class="kv"><div class="k">Material type:</div><div class="v">hot-dip-galvanized<br>➤Epoxy coated</div></div>
         </div>
       </div>
       <div class="card" style="display:flex;align-items:center;justify-content:center;padding:8px">
@@ -633,7 +655,7 @@
           if (product.technicalData.material2) {
             list.innerHTML += `
               <div class="kv"><div class="k">Material:</div><div class="v">${product.technicalData.material2}</div></div>
-              <div class="kv"><div class="k">Material type:</div><div class="v">${product.technicalData.materialType2 || 'hot-dip galvanized epoxy coated'}</div></div>
+              <div class="kv"><div class="k">Material type:</div><div class="v">${product.technicalData.materialType2 || '➤Hot-dip galvanized ➤Epoxy coated'}</div></div>
             `;
           }
         }
@@ -706,6 +728,8 @@
                 const placeholder = document.getElementById('navbar-placeholder');
                 if (placeholder) {
                     placeholder.innerHTML = data;
+                
+                document.body.classList.add('loaded');
                 }
             })
             .catch(error => console.error('Error loading navbar:', error));
@@ -723,6 +747,8 @@
                 const placeholder = document.getElementById('footer-placeholder');
                 if (placeholder) {
                     placeholder.innerHTML = data;
+                
+                document.body.classList.add('loaded');
                 }
             })
             .catch(error => console.error('Error loading footer:', error));

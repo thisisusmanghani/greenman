@@ -10,9 +10,9 @@
         "title": "C Profile GMC271812",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-2-1.jpg",
-          "assets/img/products/c-channel-2-2.jpg",
-          "assets/img/products/c-channel-2-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC271812.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC271812.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -302,9 +302,9 @@
         "title": "C Profile GMC283015",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-4-1.jpg",
-          "assets/img/products/c-channel-4-2.jpg",
-          "assets/img/products/c-channel-4-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC283015.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC283015.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -317,7 +317,7 @@
           "size": "28x30x1.5",
           "area_mm2": 127.5,
           "weight_kg_m": 1.001,
-          "cd_mm": 14.0,
+          "cd_mm": 14,
           "iz_mm4": 15374,
           "wy_mm3": 886
         },
@@ -594,9 +594,9 @@
         "title": "C Profile GMC283020",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-6-1.jpg",
-          "assets/img/products/c-channel-6-2.jpg",
-          "assets/img/products/c-channel-6-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC283015.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC283015.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -607,9 +607,9 @@
         "properties": {
           "identification": "GMC283015",
           "size": "28x30x20",
-          "area_mm2": 168.0,
+          "area_mm2": 168,
           "weight_kg_m": 1.319,
-          "cd_mm": 14.0,
+          "cd_mm": 14,
           "iz_mm4": 19049,
           "wy_mm3": 1097
         },
@@ -886,9 +886,9 @@
         "title": "C Profile GMC384015",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-8-1.jpg",
-          "assets/img/products/c-channel-8-2.jpg",
-          "assets/img/products/c-channel-8-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC384015.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC384015.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -901,7 +901,7 @@
           "size": "38x40x1.5",
           "area_mm2": 172.5,
           "weight_kg_m": 1.354,
-          "cd_mm": 14.0,
+          "cd_mm": 14,
           "iz_mm4": 41922,
           "wy_mm3": 1860
         },
@@ -1178,9 +1178,9 @@
         "title": "C Profile GMC384020",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-10-1.jpg",
-          "assets/img/products/c-channel-10-2.jpg",
-          "assets/img/products/c-channel-10-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC384020.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC384020.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -1191,9 +1191,9 @@
         "properties": {
           "identification": "GMC384020",
           "size": "38x40x2.0",
-          "area_mm2": 228.0,
+          "area_mm2": 228,
           "weight_kg_m": 1.79,
-          "cd_mm": 19.0,
+          "cd_mm": 19,
           "iz_mm4": 53125,
           "wy_mm3": 2356
         },
@@ -1470,9 +1470,9 @@
         "title": "C Profile GMC402015",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-12-1.jpg",
-          "assets/img/products/c-channel-12-2.jpg",
-          "assets/img/products/c-channel-12-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC402015.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC402015.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -1485,7 +1485,7 @@
           "size": "40x20x1.5",
           "area_mm2": 115.5,
           "weight_kg_m": 0.907,
-          "cd_mm": 20.0,
+          "cd_mm": 20,
           "iz_mm4": 7985,
           "wy_mm3": 669
         },
@@ -1762,9 +1762,9 @@
         "title": "C Profile GMC402020",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-14-1.jpg",
-          "assets/img/products/c-channel-14-2.jpg",
-          "assets/img/products/c-channel-14-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC402020.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC402020.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -1775,9 +1775,9 @@
         "properties": {
           "identification": "GMC402020",
           "size": "40x20x2.2",
-          "area_mm2": 152.0,
+          "area_mm2": 152,
           "weight_kg_m": 1.193,
-          "cd_mm": 20.0,
+          "cd_mm": 20,
           "iz_mm4": 9763,
           "wy_mm3": 819
         },
@@ -2054,9 +2054,9 @@
         "title": "C Profile GMC753820",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-16-1.jpg",
-          "assets/img/products/c-channel-16-2.jpg",
-          "assets/img/products/c-channel-16-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC753820.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC753820.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -2067,7 +2067,7 @@
         "properties": {
           "identification": "GMC753820",
           "size": "75x38x2.0",
-          "area_mm2": 294.0,
+          "area_mm2": 294,
           "weight_kg_m": 2.308,
           "cd_mm": 37.5,
           "iz_mm4": 302722,
@@ -2346,9 +2346,9 @@
         "title": "C Profile GMC753820 - Z -Axis",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-18-1.jpg",
-          "assets/img/products/c-channel-18-2.jpg",
-          "assets/img/products/c-channel-18-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC753820.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC753820.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -2359,7 +2359,7 @@
         "properties": {
           "identification": "GMC753820",
           "size": "75x38x2.0",
-          "area_mm2": 294.0,
+          "area_mm2": 294,
           "weight_kg_m": 2.308,
           "cd_mm": 37.5,
           "iz_mm4": 302722,
@@ -2638,9 +2638,9 @@
         "title": "C Profile GMC753825",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-20-1.jpg",
-          "assets/img/products/c-channel-20-2.jpg",
-          "assets/img/products/c-channel-20-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC753825.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC753825.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -2651,7 +2651,7 @@
         "properties": {
           "identification": "GMC753825",
           "size": "75x38x2.5",
-          "area_mm2": 365.0,
+          "area_mm2": 365,
           "weight_kg_m": 2.865,
           "cd_mm": 37.5,
           "iz_mm4": 341020,
@@ -2930,9 +2930,9 @@
         "title": "C Profile GMC753825 - Z -Axis",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-22-1.jpg",
-          "assets/img/products/c-channel-22-2.jpg",
-          "assets/img/products/c-channel-22-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC753825.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC753825.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -2943,7 +2943,7 @@
         "properties": {
           "identification": "GMC753825",
           "size": "75x38x2.5",
-          "area_mm2": 365.0,
+          "area_mm2": 365,
           "weight_kg_m": 2.865,
           "cd_mm": 37.5,
           "iz_mm4": 341020,
@@ -3222,9 +3222,9 @@
         "title": "C Profile GMC1005020",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-24-1.jpg",
-          "assets/img/products/c-channel-24-2.jpg",
-          "assets/img/products/c-channel-24-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC1005020.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC1005020.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -3235,9 +3235,9 @@
         "properties": {
           "identification": "GMC1005020",
           "size": "100x50x2.0",
-          "area_mm2": 392.0,
+          "area_mm2": 392,
           "weight_kg_m": 3.077,
-          "cd_mm": 50.0,
+          "cd_mm": 50,
           "iz_mm4": 733043,
           "wy_mm3": 295647
         },
@@ -3514,9 +3514,9 @@
         "title": "C Profile GMC1005020 - Z - Axis",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-26-1.jpg",
-          "assets/img/products/c-channel-26-2.jpg",
-          "assets/img/products/c-channel-26-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC1005020.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC1005020.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -3527,9 +3527,9 @@
         "properties": {
           "identification": "GMC1005020",
           "size": "100x50x2.0",
-          "area_mm2": 392.0,
+          "area_mm2": 392,
           "weight_kg_m": 3.077,
-          "cd_mm": 50.0,
+          "cd_mm": 50,
           "iz_mm4": 733043,
           "wy_mm3": 295647
         },
@@ -3806,9 +3806,9 @@
         "title": "C Profile GMC1005025",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-28-1.jpg",
-          "assets/img/products/c-channel-28-2.jpg",
-          "assets/img/products/c-channel-28-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC1005025.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC1005025.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -3821,7 +3821,7 @@
           "size": "100x50x2.5",
           "area_mm2": 487.5,
           "weight_kg_m": 3.827,
-          "cd_mm": 50.0,
+          "cd_mm": 50,
           "iz_mm4": 1061500,
           "wy_mm3": 896148
         },
@@ -4098,9 +4098,9 @@
         "title": "C Profile GMC1005025 - Z - Axis",
         "description": "",
         "images": [
-          "assets/img/products/c-channel-30-1.jpg",
-          "assets/img/products/c-channel-30-2.jpg",
-          "assets/img/products/c-channel-30-3.jpg"
+          "assets/GMC-Channels/c-channels/3d-models/GMC1005025.png",
+          "assets/GMC-Channels/c-channels/CROSS-SECTION/GMC1005025.PNG",
+          "assets/GMC-Channels/centroid xy axis.png"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and Material: S235JR",
@@ -4113,7 +4113,7 @@
           "size": "100x50x2.5",
           "area_mm2": 487.5,
           "weight_kg_m": 3.827,
-          "cd_mm": 50.0,
+          "cd_mm": 50,
           "iz_mm4": 1061500,
           "wy_mm3": 896148
         },

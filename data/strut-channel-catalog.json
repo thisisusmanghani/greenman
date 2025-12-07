@@ -11,8 +11,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM412115.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM412115.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM412115.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -20,7 +20,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM412115",
@@ -228,8 +228,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM412120.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM412120.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM412120.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -237,7 +237,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM412120",
@@ -445,8 +445,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM412125.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM412125.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM412125.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -454,7 +454,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM412125",
@@ -662,8 +662,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM414115.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM414115.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM414115.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -671,7 +671,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM414115",
@@ -879,8 +879,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM414120.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM414120.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM414120.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -888,7 +888,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM414120",
@@ -1096,8 +1096,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM414125.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM414125.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM414125.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -1105,7 +1105,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM414125",
@@ -1313,8 +1313,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GMD414120.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GMD414120.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GMD414120.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -1322,7 +1322,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GMD414120",
@@ -1530,8 +1530,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM416220.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM416220.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM416220.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -1539,7 +1539,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM416220",
@@ -1747,8 +1747,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM416225.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM416225.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM416225.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -1756,7 +1756,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM416225",
@@ -1964,8 +1964,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GMD416225.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GMD416225.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GMD416225.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -1973,7 +1973,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GMD416225",
@@ -2181,8 +2181,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM417220.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM417220.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM417220.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -2190,7 +2190,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM417220",
@@ -2398,8 +2398,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM417225.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM417225.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM417225.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -2407,7 +2407,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM417225",
@@ -2615,8 +2615,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM418220.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM418220.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM418220.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -2624,7 +2624,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM418220",
@@ -2832,8 +2832,8 @@
         "description": "",
         "images": [
           "assets/GM-STRUT/3D MODELS/GM418225.png",
-          "assets/GM-STRUT/GM41design diagram same for all.PNG",
-          "assets/GM-STRUT/CROSS SECTION/GM418225.PNG"
+          "assets/GM-STRUT/CROSS SECTION/GM418225.PNG",
+          "assets/GM-STRUT/GM41design diagram same for all.PNG"
         ],
         "specifications": {},
         "mountingMethod": "Form-locking connections and shear hole haunch connections",
@@ -2841,7 +2841,7 @@
           "material1": "S250GD",
           "materialType1": "pre-galvanized (Z-275)",
           "material2": "S235 JR",
-          "materialType2": "HDG | epoxy coated"
+          "materialType2": "HDG | ➤Epoxy coated"
         },
         "properties": {
           "identification": "GM418225",

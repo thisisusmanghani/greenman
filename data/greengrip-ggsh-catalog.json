@@ -15,10 +15,10 @@
       "material": "S250GD/S235JR",
       "surface": [
         "electro-galvanized (8-12 microns)",
-        "hot-dip galvanized (50-80 microns)",
-        "epoxy coated"
+        "➤Hot-dip galvanized (50-80 microns)",
+        "➤Epoxy coated"
       ],
-      "materialConnection": "Stainless Steel A2/A4, Knurled nut"
+      "materialConnection": "➤Stainless Steel A2/A4, Knurled nut"
     },
     "productDefinition": "The GreenGrip Sprinkler Pipe Hanger is a UL & FM-approved pipe support solution designed for fire protection piping systems. Made from high-strength galvanized steel, it provides secure suspension and load distribution for pipes in ceiling. Equipped with a top nut connection, the hanger allows for easy attachment to threaded rods, ensuring a stable and adjustable mounting solution.",
     "loadingData": [
@@ -234,10 +234,10 @@
       "material": "S250GD/S235JR",
       "surface": [
         "electro-galvanized (8-12 microns)",
-        "hot-dip galvanized (50-80 microns)",
-        "epoxy coated"
+        "➤Hot-dip galvanized (50-80 microns)",
+        "➤Epoxy coated"
       ],
-      "materialConnection": "Stainless Steel A2/A4"
+      "materialConnection": "➤Stainless Steel A2/A4"
     },
     "productDefinition": "The GreenGrip Sprinkler Hanger is a nut-free pipe support designed for fire piping systems. The pre-drilled holes enable easy attachment to ceiling structures or brackets. Made from corrosion-resistant galvanized steel, this hanger is ideal for cost-effective, efficient installations where a nut-free mounting system is preferred.",
     "loadingData": [

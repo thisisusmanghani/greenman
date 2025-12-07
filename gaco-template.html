@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <title>Angle Connectors (GACO) – PDF-like Template</title>
   <style>
     :root{
@@ -16,7 +19,17 @@
       --ink:#222; --muted:#6b6b6b; --paper:#fff; --line:#e6e6e6; --shadow:0 4px 18px rgba(0,0,0,.12);
     }
     *{box-sizing:border-box}
-    body{margin:0;background:#f1f3f5;color:var(--ink);font:14px/1.4 Segoe UI,system-ui,-apple-system,Arial,sans-serif}
+    
+        /* Hide content until fully loaded */
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+        body:not(.loaded) > *:not(.page-loader) {
+            visibility: hidden;
+            opacity: 0;
+        }
+        
+        body{margin:0;background:#f1f3f5;color:var(--ink);font:14px/1.4 'Roboto',sans-serif}
 
     .canvas{max-width:1100px;margin:24px auto;padding:18px;background:var(--paper);box-shadow:var(--shadow);border-radius:8px}
 
@@ -251,7 +264,8 @@
 
   </style>
 
-    </head>
+        <link rel="stylesheet" href="navbar.css">
+</head>
 <body>
   
     <!-- Navigation Bar (Loaded from navbar.html) -->
@@ -266,11 +280,11 @@
       <div class="card">
         <h3>Specification</h3>
         <ul id="spec-list">
-          <li>electro-galvanized (Z-275)</li>
-          <li>hot-dip galvanized</li>
-          <li>epoxy coated</li>
-          <li>Stainless Steel A2/A4</li>
-          <li>Material: S250GD/S235JR</li>
+          <li>➤Electro-galvanized (Z-275)</li>
+          <li>➤Hot-dip galvanized</li>
+          <li>➤Epoxy coated</li>
+          <li>➤Stainless Steel A2/A4</li>
+          <li>➤Material: S250GD/S235JR</li>
         </ul>
       </div>
       <div class="def-box">
@@ -307,11 +321,11 @@
     const fallbackData = {
       title: "Angle Connector's (GACO)",
       specification:[
-        "electro-galvanized (Z-275)",
-        "hot-dip galvanized",
-        "epoxy coated",
-        "Stainless Steel A2/A4",
-        "Material: S250GD/S235JR"
+        "➤Electro-galvanized (Z-275)",
+        "➤Hot-dip galvanized",
+        "➤Epoxy coated",
+        "➤Stainless Steel A2/A4",
+        "➤Material: S250GD/S235JR"
       ],
       definition: document.getElementById('definition').textContent,
       page: 30,
@@ -399,6 +413,8 @@
                 const placeholder = document.getElementById('navbar-placeholder');
                 if (placeholder) {
                     placeholder.innerHTML = data;
+                
+                document.body.classList.add('loaded');
                 }
             })
             .catch(error => console.error('Error loading navbar:', error));
@@ -416,6 +432,8 @@
                 const placeholder = document.getElementById('footer-placeholder');
                 if (placeholder) {
                     placeholder.innerHTML = data;
+                
+                document.body.classList.add('loaded');
                 }
             })
             .catch(error => console.error('Error loading footer:', error));

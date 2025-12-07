@@ -2,11 +2,11 @@
   "title": "Multi-Directional Reinforced Connector (GMRC)",
   "code_prefix": "GMRC",
   "specification": [
-    "Material: S250GD/S235JR",
-    "electro-galvanized (Z-275)",
-    "hot-dip galvanized",
-    "epoxy coated",
-    "Stainless Steel A2/A4"
+    "➤Material: S250GD/S235JR",
+    "➤Electro-galvanized (Z-275)",
+    "➤Hot-dip galvanized",
+    "➤Epoxy coated",
+    "➤Stainless Steel A2/A4"
   ],
   "definition": "Multi-directional reinforced connectors add strength and rigidity, making joints of the structure, suitable for high-load applications and providing better torsional stability in complex 3D frameworks. The C-shaped sides allow multi-directional assembly with improved load distribution, accommodating more complex structural layouts.",
   "items": [

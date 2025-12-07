@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <title>Accessories Collection – Product List</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="styles.css">
   <style>
     .header {
       text-align: center;
@@ -13,6 +14,98 @@
     .category-info {
       display: none !important;
     }
+    
+    /* Product Grid */
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 25px;
+        margin-bottom: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(27, 94, 32, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-left: 4px solid #0d3d12;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(27, 94, 32, 0.25);
+    }
+
+    .product-card h3 {
+        color: #0d3d12;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .product-card .product-code {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .product-card .product-count {
+        background: #fff3e0;
+        color: #f57c00;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 13px;
+        width: fit-content;
+        margin-bottom: 10px;
+    }
+
+    .product-card .view-details {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 13px;
+        transition: all 0.3s;
+        box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);
+        width: fit-content;
+        align-self: flex-start;
+    }
+
+    .product-card .view-details:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(82, 180, 85, 0.4);
+    }
+
+    .code-badge {
+        background: #e8f5e9;
+        color: #2D9F3C;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-family: 'Roboto', monospace;
+        font-size: 13px;
+        width: fit-content;
+    }
+
+    @media (max-width: 768px) {
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
   </style>
 </head>
 <body>
@@ -28,645 +121,247 @@
                 <h2 style="font-size: 2.5rem; color: #1B5E20; font-weight: 700; margin: 0;">Channel Accessories Collection</h2>
             
 
-            <div class="accessories-grid" style="max-width: 1400px; margin: 0 auto; padding: 0 30px;">
-                <div class="accessories-table-container" style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
-                    <table class="accessories-table" style="width: 100%; border-collapse: collapse;">
-                        <thead>
-                            <tr style="background: #1B5E20;">
-                                <th style="padding: 15px 12px; text-align: left; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">#</th>
-                                <th style="padding: 15px 12px; text-align: left; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">Product Category</th>
-                                <th style="padding: 15px 12px; text-align: center; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">Code Prefix</th>
-                                <th style="padding: 15px 12px; text-align: center; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.1);">Products</th>
-                                <th style="padding: 15px 12px; text-align: center; color: white; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- 01 - GACO -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gaco-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">01</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Angle Connector's (GACO)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GACO
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        14 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gaco-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+            
+            <div class="products-grid">
 
-                            <!-- 02 - GFCO -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gfco-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">02</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Flat Connector (GFCO)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GFCO
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">9 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gfco-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gaco-catalog.html'">
+                    <h3>Angle Connector's (GACO)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GACO</span></div>
+                    <div class="product-count">14 items</div>
+                    <a href="gaco-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 03 - GBDC -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gbdc-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">03</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Bi-Directional Connector (GBDC)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GBDC
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        8 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gbdc-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gfco-catalog.html'">
+                    <h3>Flat Connector (GFCO)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GFCO</span></div>
+                    <div class="product-count">9 items</div>
+                    <a href="gfco-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 04 - GMDC -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gmdc-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">04</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Multi-Directional Connector (GMDC)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GMDC
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">8 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gmdc-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gbdc-catalog.html'">
+                    <h3>Bi-Directional Connector (GBDC)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GBDC</span></div>
+                    <div class="product-count">8 items</div>
+                    <a href="gbdc-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 05 - GMRC -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gmrc-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">05</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Multi-Directional Reinforced Connector (GMRC)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GMRC
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        6 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gmrc-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gmdc-catalog.html'">
+                    <h3>Multi-Directional Connector (GMDC)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GMDC</span></div>
+                    <div class="product-count">8 items</div>
+                    <a href="gmdc-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 06 - GZCO -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gzco-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">06</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Z-Shape Connector (GZCO)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GZCO
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">5 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gzco-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gmrc-catalog.html'">
+                    <h3>Multi-Directional Reinforced Connector (GMRC)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GMRC</span></div>
+                    <div class="product-count">6 items</div>
+                    <a href="gmrc-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 07 - GUWB -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='guwb-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">07</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">U-Shape Winged Bracket (GUWB)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GUWB
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        9 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="guwb-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gzco-catalog.html'">
+                    <h3>Z-Shape Connector (GZCO)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GZCO</span></div>
+                    <div class="product-count">5 items</div>
+                    <a href="gzco-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 08 - GRAC -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='grac-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">08</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Reinforced Angle Connector (GRAC)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GRAC
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">1 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="grac-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='guwb-catalog.html'">
+                    <h3>U-Shape Winged Bracket (GUWB)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GUWB</span></div>
+                    <div class="product-count">9 items</div>
+                    <a href="guwb-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 09 - GCWA -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gcwa-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">09</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Channel Washer (GCWA)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GCWA
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        7 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gcwa-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='grac-catalog.html'">
+                    <h3>Reinforced Angle Connector (GRAC)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GRAC</span></div>
+                    <div class="product-count">1 items</div>
+                    <a href="grac-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 10 - DSCB -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='dscb-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">10</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Double-Sided Connector Bracket (DSCB)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        DSCB
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">4 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="dscb-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gcwa-catalog.html'">
+                    <h3>Channel Washer (GCWA)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GCWA</span></div>
+                    <div class="product-count">7 items</div>
+                    <a href="gcwa-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 11 - GBHO -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gbho-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">11</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Base Holder (GBHO)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GBHO
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        5 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gbho-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='dscb-catalog.html'">
+                    <h3>Double-Sided Connector Bracket (DSCB)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">DSCB</span></div>
+                    <div class="product-count">4 items</div>
+                    <a href="dscb-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 12 - GPTN -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gptn-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">12</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Profile Tooth Nut (GPTN)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GPTN
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        11 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gptn-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gbho-catalog.html'">
+                    <h3>Base Holder (GBHO)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GBHO</span></div>
+                    <div class="product-count">5 items</div>
+                    <a href="gbho-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 13 - GPTB -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gptb-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">13</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Profile Bolt with Tooth Head (GPTB)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GPTB
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        13 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gptb-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gptn-catalog.html'">
+                    <h3>Profile Tooth Nut (GPTN)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GPTN</span></div>
+                    <div class="product-count">11 items</div>
+                    <a href="gptn-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 14 - GMAH -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gmah-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">14</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Multi Angle Base Holder (GMAH)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GMAH
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">1 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gmah-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gptb-catalog.html'">
+                    <h3>Profile Bolt with Tooth Head (GPTB)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GPTB</span></div>
+                    <div class="product-count">13 items</div>
+                    <a href="gptb-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 15 - GAHI -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gahi-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">15</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Adjustible Hinge (GAHI)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GAHI
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        6 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gahi-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gmah-catalog.html'">
+                    <h3>Multi Angle Base Holder (GMAH)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GMAH</span></div>
+                    <div class="product-count">1 items</div>
+                    <a href="gmah-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 16 - GBAT -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gbat-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">16</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Beam Attachment U-Shaped Holder (GBUHxxxx)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GBUH
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        8 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gbat-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gahi-catalog.html'">
+                    <h3>Adjustible Hinge (GAHI)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GAHI</span></div>
+                    <div class="product-count">6 items</div>
+                    <a href="gahi-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 17 - GBNB -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gbnb-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">17</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Rod Bracing Node Bracket (GBNB)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GBNB
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        20 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gbnb-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gbat-catalog.html'">
+                    <h3>Beam Attachment U-Shaped Holder (GBUHxxxx)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GBUH</span></div>
+                    <div class="product-count">8 items</div>
+                    <a href="gbat-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 18 - GBCC -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gbcc-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">18</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Back-to-Back Channel Connector (GBCC)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GBCC
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">1 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gbcc-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gbnb-catalog.html'">
+                    <h3>Rod Bracing Node Bracket (GBNB)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GBNB</span></div>
+                    <div class="product-count">20 items</div>
+                    <a href="gbnb-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 19 - GECC -->
-                            <tr style="background: #ffffff; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#ffffff'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gecc-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">19</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Edge-to-Edge Channel Connector (GECC)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GECC
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-                                        8 items
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gecc-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gbcc-catalog.html'">
+                    <h3>Back-to-Back Channel Connector (GBCC)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GBCC</span></div>
+                    <div class="product-count">1 items</div>
+                    <a href="gbcc-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                            <!-- 20 - GPNB -->
-                            <tr style="background: #f8f9fa; transition: all 0.3s; cursor: pointer;" 
-                                onmouseover="this.style.background='#e8f5e9'; this.style.transform='scale(1.01)'" 
-                                onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'"
-                                onclick="window.location.href='gpnb-catalog.html'">
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; color: #999; font-weight: 600;">20</td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
-                                    <div style="font-weight: 600; color: #1B5E20; font-size: 15px;">Profile Node Bracket (GPNB)</div>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #e8f5e9; color: #2D9F3C; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-family: 'Courier New', monospace; font-size: 13px;">
-                                        GPNB
-                                    </span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <span style="background: #fff3e0; color: #f57c00; padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 13px;">2 items</span>
-                                </td>
-                                <td style="padding: 16px 20px; border-bottom: 1px solid #e0e0e0; text-align: center;">
-                                    <a href="gpnb-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #52B455 0%, #2D9F3C 100%); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(82, 180, 85, 0.3);"
-                                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(82, 180, 85, 0.4)'"
-                                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(82, 180, 85, 0.3)'"
-                                       onclick="event.stopPropagation()">
-                                        View Products
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-left: 4px;">
-                                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
+                <div class="product-card" onclick="window.location.href='gecc-catalog.html'">
+                    <h3>Edge-to-Edge Channel Connector (GECC)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GECC</span></div>
+                    <div class="product-count">8 items</div>
+                    <a href="gecc-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                        </tbody>
-                    </table>
+                <div class="product-card" onclick="window.location.href='gpnb-catalog.html'">
+                    <h3>Profile Node Bracket (GPNB)</h3>
+                    <div class="product-code">Product Code: <span class="code-badge">GPNB</span></div>
+                    <div class="product-count">2 items</div>
+                    <a href="gpnb-catalog.html" class="view-details" onclick="event.stopPropagation()">
+                        View Products
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1398,31 +1093,46 @@
     </script>
   </div>
 
-  <!-- Footer (Loaded from footer.html) -->
-  <div id="footer-placeholder"></div>
-
   <script src="js/product-renderer.js"></script>
   <script src="js/table-utils.js"></script>
 
     <!-- Load Navbar Component -->
     <script>
-        // Load navbar and footer components
-        Promise.all([
-            fetch('navbar.html').then(r => r.text()),
-            fetch('footer.html').then(r => r.text())
-        ]).then(([navbarData, footerData]) => {
-            const navbarPlaceholder = document.getElementById('navbar-placeholder');
-            const footerPlaceholder = document.getElementById('footer-placeholder');
-            
-            if (navbarPlaceholder) navbarPlaceholder.innerHTML = navbarData;
-            if (footerPlaceholder) footerPlaceholder.innerHTML = footerData;
-            
-            // Load navbar JavaScript AFTER HTML is injected
-            const navScript = document.createElement('script');
-            navScript.src = 'navbar.js';
-            navScript.defer = true;
-            document.body.appendChild(navScript);
-        }).catch(error => console.error('Error loading components:', error));
+        // Load navbar component after DOM is ready
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                const placeholder = document.getElementById('navbar-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                    
+                    // Load navbar.js after HTML is injected
+                    const navScript = document.createElement('script');
+                    navScript.src = 'navbar.js';
+                    navScript.defer = true;
+                    document.body.appendChild(navScript);
+                }
+                document.body.classList.add('loaded');
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Footer Component -->
+    <script>
+        // Load footer component after DOM is ready
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const placeholder = document.getElementById('footer-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                }
+                document.body.classList.add('loaded');
+            })
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 </html>

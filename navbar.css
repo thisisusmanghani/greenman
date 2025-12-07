@@ -14,7 +14,7 @@
   --black-color-lighten: #1B5E20;
 
   /*========== Font and typography ==========*/
-  --body-font: "Montserrat", sans-serif;
+  --body-font: 'Roboto', sans-serif;
   --normal-font-size: .938rem;
 
   /*========== Font weight ==========*/
@@ -451,7 +451,8 @@ a {
   }
 
   /* Show dropdown menu */
-  .dropdown__item:hover .dropdown__menu {
+  .dropdown__item:hover .dropdown__menu,
+  .dropdown__item.dropdown-active .dropdown__menu {
     opacity: 1;
     top: 5.5rem;
     pointer-events: initial;
@@ -482,7 +483,8 @@ a {
     color: #333;
   }
 
-  .dropdown__item:hover .dropdown__arrow {
+  .dropdown__item:hover .dropdown__arrow,
+  .dropdown__item.dropdown-active .dropdown__arrow {
     color: #4CAF50;
   }
 
@@ -522,6 +524,7 @@ a {
   }
 
   .dropdown__item--mega:hover .dropdown__mega,
+  .dropdown__item--mega.dropdown-active .dropdown__mega,
   .dropdown__mega:hover {
     opacity: 1;
     pointer-events: initial;

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <title>Contact Us - Green Man Industrial Solutions</title>
+
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
     <style>
         :root {
@@ -20,8 +26,18 @@
             box-sizing: border-box;
         }
 
+        
+        /* Hide content until fully loaded */
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+        body:not(.loaded) > *:not(.page-loader) {
+            visibility: hidden;
+            opacity: 0;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: #f5f5f5;
             color: #333;
             line-height: 1.6;
@@ -46,6 +62,7 @@
             opacity: 0;
             visibility: hidden;
         }
+        body.loaded > *:not(.page-loader){visibility:visible;opacity:1;transition:opacity .3s ease-in}
 
         .loader-content {
             text-align: center;
@@ -400,6 +417,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
     <!-- Page Loader -->

@@ -27,12 +27,12 @@ GMDC3181
 PAGE 33
 
 S250GD/S235JR
-electro-galvanized (Z-275)
-hot-dip galvanized
+➤Electro-galvanized (Z-275)
+➤Hot-dip galvanized
 
-epoxy coated
+➤Epoxy coated
 
-Stainless Steel A2/A4
+➤Stainless Steel A2/A4
 
 Detail
 

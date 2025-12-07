@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <title>Seismic Solutions Collection | GREEN MAN</title>
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         .product-hero {
@@ -238,7 +240,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <div id="navbar-container"></div>
+    <div id="navbar-placeholder"></div>
     <div class="desktop-spacing"></div>
 
     <!-- Product Hero -->
@@ -445,27 +447,43 @@
 
     </section>
 
-    <!-- Footer -->
-    <div id="footer-container"></div>
-
+    <!-- Load Navbar Component -->
     <script>
-        // Load navbar and footer
-        Promise.all([
-            fetch('navbar.html').then(response => response.text()),
-            fetch('footer.html').then(response => response.text())
-        ]).then(([navbarData, footerData]) => {
-            const navbarContainer = document.getElementById('navbar-container');
-            const footerContainer = document.getElementById('footer-container');
-            
-            if (navbarContainer) navbarContainer.innerHTML = navbarData;
-            if (footerContainer) footerContainer.innerHTML = footerData;
-            
-            // Load navbar.js after HTML is injected
-            const navScript = document.createElement('script');
-            navScript.src = 'navbar.js';
-            navScript.defer = true;
-            document.body.appendChild(navScript);
-        }).catch(error => console.error('Error loading navbar/footer:', error));
+        // Load navbar component after DOM is ready
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                const placeholder = document.getElementById('navbar-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                    
+                    // Load navbar.js after HTML is injected
+                    const navScript = document.createElement('script');
+                    navScript.src = 'navbar.js';
+                    navScript.defer = true;
+                    document.body.appendChild(navScript);
+                }
+                document.body.classList.add('loaded');
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Footer Component -->
+    <script>
+        // Load footer component after DOM is ready
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const placeholder = document.getElementById('footer-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = data;
+                }
+                document.body.classList.add('loaded');
+            })
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 </html>

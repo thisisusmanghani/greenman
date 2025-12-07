@@ -17,7 +17,7 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
@@ -1798,7 +1798,7 @@
             font-size: 80px;
             color: var(--secondary-green);
             opacity: 0.2;
-            font-family: Georgia, serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1;
         }
         
@@ -1849,12 +1849,11 @@
         
         /* ========== ENHANCED FOOTER ========== */
         footer {
-            background: #f8f9fa;
-            color: #333;
-            padding: 60px 0 30px;
+            background: #003304;
+            color: white;
+            padding: 60px 0 0;
+            margin-top: 80px;
             position: relative;
-            overflow: hidden;
-            border-top: 1px solid #e0e0e0;
         }
         
         .footer-wrapper {
