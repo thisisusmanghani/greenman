@@ -11,13 +11,13 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <title>GREEN MAN - Industrial Fastening Solutions</title>
     
-    <!-- Google Fonts: Roboto -->
+    <!-- Google Fonts: Roboto - Optimized -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS - Local optimized -->
+    <link rel="stylesheet" href="tailwind.min.css">
     
     <!-- Load navbar CSS in head to prevent flash -->
     <link rel="stylesheet" href="navbar.css">
@@ -559,6 +559,17 @@
         
             document.body.classList.add('loaded');
         });
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
     </script>
 </body>
 </html>
