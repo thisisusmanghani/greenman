@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.css">
+  <title>Anchor Product – Details</title>
+  <style>
+    :root{
+      --green-primary:#52B455;
+      --green-dark:#3a8a3d;
+      --green-darker:#2d6b2f;
+      --green-light:#7fd682;
+      --green-lighter:#b8e6ba;
+      --green-pale:#e8f5e9;
+      --dark-teal:#3a8a3d;
+      --medium-teal:#52B455;
+      --light-green:#e8f5e9;
+      --green:#52B455;
+      --green-2:#7fd682;
+      --ink:#222;
+      --muted:#6b6b6b;
+      --paper:#ffffff;
+      --line:#e6e6e6;
+      --shadow:0 4px 18px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    
+    body:not(.loaded) {
+        overflow: hidden;
+    }
+    body:not(.loaded) > *:not(.page-loader) {
+        visibility: hidden;
+        opacity: 0;
+    }
+        
+    body{margin:0;background:#f1f3f5;color:var(--ink);font:14px/1.4 'Roboto',sans-serif}
+    
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    main{animation:fadeInUp 0.6s ease-out}
+
+    .canvas{max-width:1100px;margin:24px auto;padding:18px;background:var(--paper);box-shadow:var(--shadow);border-radius:8px;transition:box-shadow 0.3s ease;margin-top:100px}
+    .canvas:hover{box-shadow:0 8px 24px rgba(33,92,92,0.15)}
+
+    .title-row{display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--light-green);padding:6px 4px 12px;transition:border-color 0.3s ease}
+    .title-row:hover{border-bottom-color:var(--medium-teal)}
+    .bullet{width:14px;height:14px;border-radius:50%;background:var(--dark-teal);transition:all 0.3s ease}
+    .title-row:hover .bullet{transform:scale(1.2);background:var(--medium-teal);box-shadow:0 0 12px rgba(45,122,110,0.4)}
+    .title{font-size:26px;font-weight:800;letter-spacing:.2px;transition:color 0.3s ease}
+    .title-row:hover .title{color:var(--dark-teal)}
+
+    .content-row{display:grid;grid-template-columns:auto auto 1fr;gap:14px;margin:14px 0 18px;align-items:start}
+    
+    .ph{background:transparent;border:none;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;cursor:pointer;padding:0;overflow:hidden;width:260px;height:220px}
+    .ph:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(33,92,92,0.2)}
+    .ph img{width:100%;height:100%;object-fit:contain;transition:transform 0.3s ease}
+    .ph:hover img{transform:scale(1.05)}
+
+    .card{border:none;padding:12px 16px;border-radius:6px;transition:all 0.3s ease;background:rgba(204,232,201,0.15);height:fit-content}
+    .card:hover{background:rgba(204,232,201,0.25);transform:translateY(-2px);box-shadow:0 4px 12px rgba(33,92,92,0.1)}
+    .card h3{margin:.2rem 0 .8rem;font-weight:800;color:var(--dark-teal);font-size:16px;letter-spacing:0;transition:color 0.3s ease}
+    .card:hover h3{color:var(--medium-teal)}
+    .list{display:grid;grid-template-columns:1fr;gap:6px;margin-top:4px}
+    .kv{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:13px;padding:6px;border-radius:4px;transition:all 0.2s ease;align-items:start}
+    .kv:hover{background:rgba(45,122,110,0.08);padding-left:8px}
+    .kv .k{color:var(--dark-teal);font-weight:700;white-space:nowrap}
+    .kv .v{font-weight:400;text-align:left;color:var(--ink);line-height:1.4}
+
+    .section-title{font-weight:800;letter-spacing:.3px;font-size:15px;margin:24px 0 8px;text-align:left;color:var(--dark-teal);transition:color 0.3s ease}
+    .section-title:hover{color:var(--medium-teal)}
+    
+    .params-table{width:100%;border-collapse:collapse;border:2px solid var(--dark-teal);overflow:hidden;border-radius:6px;margin-bottom:24px}
+    .params-table th,.params-table td{border-right:1px solid var(--medium-teal);border-bottom:1px solid var(--line);padding:8px;text-align:center;font-size:11px;transition:all 0.2s ease}
+    .params-table tbody tr:hover td{background:rgba(204,232,201,0.15);color:var(--ink);font-weight:700}
+    .params-table th{background:rgba(82,180,85,0.2);color:var(--dark-teal);font-weight:800;line-height:1.3}
+    .params-table td{font-weight:600;background:#fff}
+    .params-table th:last-child,.params-table td:last-child{border-right:none}
+
+    .back-button{display:inline-block;margin-bottom:20px;padding:10px 20px;background:var(--green-primary);color:white;text-decoration:none;border-radius:6px;font-weight:600;transition:all 0.3s ease}
+    .back-button:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 4px 12px rgba(82,180,85,0.3)}
+
+    @media (max-width: 768px) {
+      .canvas{margin:0;padding:12px}
+      .content-row{grid-template-columns:1fr;gap:12px}
+      .ph{width:100%;height:200px}
+      .list{grid-template-columns:1fr}
+      .title{font-size:20px}
+      .params-table{font-size:10px}
+      .params-table th,.params-table td{padding:6px 4px}
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navigation Bar (Loaded from navbar.html) -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <div class="canvas">
+      <a href="anchor-list.html" class="back-button">← Back to Anchors List</a>
+      
+      <div class="title-row">
+        <div class="bullet"></div>
+        <h1 class="title" id="productTitle">Loading...</h1>
+      </div>
+
+      <div class="content-row">
+        <div class="ph" id="image3d">
+          <!-- 3D Image will be loaded dynamically -->
+        </div>
+        
+        <div class="ph" id="imageDrawing">
+          <!-- Drawing Image will be loaded dynamically -->
+        </div>
+        
+        <div class="card">
+          <h3>Specification</h3>
+          <div class="list" id="specifications">
+            <!-- Specifications will be loaded dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Product Definition</h2>
+      <div style="background:rgba(204,232,201,0.15);padding:20px;border-radius:8px;margin-bottom:24px;border-left:4px solid var(--dark-teal)">
+        <p id="productDefinition" style="line-height:1.6;color:var(--ink);margin:0;text-align:left">Loading...</p>
+      </div>
+
+      <h2 class="section-title">Installation Parameters</h2>
+      <div style="overflow-x:auto">
+        <table class="params-table">
+          <thead>
+            <tr>
+              <th>Product Code</th>
+              <th>Size</th>
+              <th>Pack Size<br/>(pcs)</th>
+              <th>Drill Ø<br/>(mm)</th>
+              <th>Drill Hole<br/>Depth (mm)</th>
+              <th>Max. Fixture<br/>Thickness (mm)</th>
+              <th>eff. Anchorage<br/>depth (mm)</th>
+              <th>Installation<br/>Torque (Nm)</th>
+              <th>Tensile<br/>Load (kN)</th>
+              <th>Shear<br/>Load (kN)</th>
+            </tr>
+          </thead>
+          <tbody id="installationParams">
+            <!-- Installation parameters will be loaded dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (Loaded from footer.html) -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Get product code from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productCode = urlParams.get('code');
+
+    async function loadProduct() {
+      try {
+        // Load anchor catalog
+        const response = await fetch('data/anchor-catalog.json');
+        const data = await response.json();
+        
+        // Find the product by product code
+        const product = data.products.find(p => p.productCode === productCode);
+        
+        if (!product) {
+          document.querySelector('.canvas').innerHTML = '<p style="text-align:center;padding:40px;color:#d32f2f">Product not found</p>';
+          return;
+        }
+
+        // Update title
+        document.getElementById('productTitle').textContent = `${product.name} - ${product.productCode}`;
+
+        // Load images
+        const image3dContainer = document.getElementById('image3d');
+        const imageDrawingContainer = document.getElementById('imageDrawing');
+        
+        image3dContainer.innerHTML = `<img src="${product.images?.['3d'] || 'assets/Anchors/3d/' + product.productCode + '.png'}" alt="${product.name}">`;
+        imageDrawingContainer.innerHTML = `<img src="${product.images?.drawing || 'assets/Anchors/Drawing/' + product.productCode + '.png'}" alt="${product.name}">`;
+
+        // Load specifications
+        const specsContainer = document.getElementById('specifications');
+        specsContainer.innerHTML = Object.entries(product.specifications || {}).map(([key, value]) => 
+          `<div class="kv"><span class="k">${formatKey(key)}:</span><span class="v">${value}</span></div>`
+        ).join('');
+
+        // Load product definition
+        const definitionContainer = document.getElementById('productDefinition');
+        definitionContainer.textContent = product.description || 'Product definition not available.';
+
+        // Load ALL installation parameters for all variants
+        const paramsTable = document.getElementById('installationParams');
+        paramsTable.innerHTML = product.variants.map(variant => {
+          return `
+            <tr>
+              <td>${variant.productCode || '—'}</td>
+              <td>${variant.size || '—'}</td>
+              <td>${variant.packSize || '—'}</td>
+              <td>${variant.drillDiameter || '—'}</td>
+              <td>${variant.drillHoleDepth || '—'}</td>
+              <td>${variant.maxFixtureThickness || '—'}</td>
+              <td>${variant.effAnchorageDepth || '—'}</td>
+              <td>${variant.installationTorque || '—'}</td>
+              <td>${variant.tensileLoadKN || '—'}</td>
+              <td>${variant.shearLoadKN || '—'}</td>
+            </tr>
+          `;
+        }).join('');
+
+        // Mark as loaded
+        document.body.classList.add('loaded');
+      } catch (error) {
+        console.error('Error loading product:', error);
+        document.querySelector('.canvas').innerHTML = '<p style="text-align:center;padding:40px;color:#d32f2f">Error loading product</p>';
+      }
+    }
+
+    function formatKey(key) {
+      return key
+        .replace(/([A-Z])/g, ' $1')
+        .replace(/^./, str => str.toUpperCase())
+        .trim();
+    }
+
+    loadProduct();
+  </script>
+
+  <script>
+    // Load navbar
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        const script = document.createElement('script');
+        script.src = 'navbar.js';
+        document.body.appendChild(script);
+      });
+    
+    // Load footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
