@@ -169,8 +169,8 @@
 
     async function loadProduct() {
       try {
-        // Load anchor catalog
-        const response = await fetch('data/anchor-catalog.json');
+        // Load anchor catalog with cache busting
+        const response = await fetch('data/anchor-catalog.json?v=' + Date.now());
         const data = await response.json();
         
         // Find the product by product code
